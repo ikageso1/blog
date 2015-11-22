@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://ecl.info.kindai.ac.jp/~ikageso/sitemap.xml

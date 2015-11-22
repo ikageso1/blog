@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>ikageso.log</title>
+  <subtitle>ECL</subtitle>
+  <id>http://ecl.info.kindai.ac.jp/blog</id>
+  <link href="http://ecl.info.kindai.ac.jp/blog"/>
+  <link href="http://ecl.info.kindai.ac.jp/feed.xml" rel="self"/>
+  <updated>2015-11-21T04:35:00Z</updated>
+  <author>
+    <name>ikageso</name>
+  </author>
+  <entry>
+    <title>PuppyLinixでSSHサーバ構築</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html</id>
+    <published>2015-11-21T04:35:00Z</published>
+    <updated>2015-11-21T13:59:07+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;pre&gt;&lt;code&gt;petget install ssh
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>第15回</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/16/01.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/16/01.html</id>
+    <published>2015-01-15T15:00:00Z</published>
+    <updated>2015-02-16T17:03:19+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h3 id="電子メール"&gt;電子メール&lt;/h3&gt;
+
+&lt;p&gt;RFC822で規定されている。
+以下のヘッダフィールドを定義されている。&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: left"&gt;ヘッダ&lt;/th&gt;
+&lt;th style="text-align: left"&gt;意味&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;From&lt;/td&gt;
+&lt;td style="text-align: left"&gt;送信者アドレス&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;To&lt;/td&gt;
+&lt;td style="text-align: left"&gt;受信者アドレス&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;Date&lt;/td&gt;
+&lt;td style="text-align: left"&gt;日時&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: left"&gt;Message-id&lt;/td&gt;
+&lt;td style="text-align: left"&gt;識別子&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;h4 id="送信から受信の流れ"&gt;送信から受信の流れ&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;MUA(Mail User Agent)&lt;/li&gt;
+&lt;li&gt;MTA(Mail Transfer Agent)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="smtp(simple-mail-transfer-protocol)"&gt;SMTP(Simple Mail Transfer Protocol)&lt;/h4&gt;
+
+&lt;h4 id="pop(post-office-protocol)"&gt;POP(Post Office Protocol)&lt;/h4&gt;
+
+&lt;h3 id="www(world-wide-web)"&gt;WWW(World Wide Web)&lt;/h3&gt;
+
+&lt;p&gt;CERNで開発される。
+ブラウザで有名なmozillaは、
+Mosaicの開発者がゴジラ好きである事から命名。&lt;/p&gt;
+
+&lt;h4 id="url(uniform-resource-locator)"&gt;URL(Uniform Resource Locator)&lt;/h4&gt;
+
+&lt;p&gt;スキーム サーバ名 ポート名 ドキュメントのパス名&lt;/p&gt;
+
+&lt;h3 id="webドキュメントの形式"&gt;Webドキュメントの形式&lt;/h3&gt;
+
+&lt;p&gt;Webページの多くはHTMLで記述される。
+HTMLはMarkup Languageの一種であり、
+Markup Languageとは
+文字列の属性情報をあらかじめ定義
+されたコマンドとして文章中に記述していく方式の言語である。&lt;/p&gt;
+
+&lt;p&gt;以下に簡単なhtmlのソースを示す。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;head&amp;gt;
+&amp;lt;title&amp;gt;Homepage&amp;lt;/title&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body&amp;gt;
+&amp;lt;span&amp;gt;分散システムです&amp;lt;/span&amp;gt;
+&amp;lt;/body&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="wwwシステムの基本構成"&gt;WWWシステムの基本構成&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ブラウザからドキュメントの取得要求をする。&lt;/li&gt;
+&lt;li&gt;ローカルファイルからドキュメントを取得する。&lt;/li&gt;
+&lt;li&gt;応答する。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;この動作をするプロトコルが&lt;strong&gt;HTTP&lt;/strong&gt;である。&lt;/p&gt;
+
+&lt;h4 id="http(hypertext-transfer-protocol)"&gt;HTTP(Hypertext Transfer Protocol)&lt;/h4&gt;
+
+&lt;p&gt;クライアントとサーバの間の通信はHTTPに基づいて実行される。&lt;/p&gt;
+
+&lt;p&gt;当初のWebシステムは静的なドキュメントを表示するのみだった。
+しかしながら、今日ではCGI(Common Gateway Interface)
+を使用して入力を受理し、検索結果などの
+動的なドキュメントを表示するようになっている。&lt;/p&gt;
+
+&lt;p&gt;以下が簡単なCGIの動作手順である。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ブラウザで要求内容をCGIフォームにパラメータ入力する。&lt;/li&gt;
+&lt;li&gt;Webサーバが要求内容の解析行う。&lt;/li&gt;
+&lt;li&gt;CGIアプリが内容をアプリケーションで処理する。&lt;/li&gt;
+&lt;li&gt;Webドキュメントが生成される。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id="wwwにおけるフォールトトレランス、負荷分散"&gt;WWWにおけるフォールトトレランス、負荷分散&lt;/h4&gt;
+
+&lt;p&gt;WWWシステムのフォールトトレランス、負荷分散などは
+* クライアント側のキャッシュ
+* サーバ側のレプリケーション
+により行われている。&lt;/p&gt;
+
+&lt;p&gt;HTTPは直接的に耐故障性や負荷分散性能を
+高められるようには構成されていない。&lt;/p&gt;
+
+&lt;p&gt;キャッシュとは過去に使ったデータを記憶しておいて、
+更新が無いときにはそのまま流用する機能である。&lt;/p&gt;
+
+&lt;p&gt;WWWのクライアント側のキャッシュとして、&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ブラウザでのキャッシュ&lt;/li&gt;
+&lt;li&gt;Webプロキシでのキャッシュ
+の二種類が存在する。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;一貫性プロトコルにより、一貫性を確認。
+変更が有るときは再読み込みをしない。
+もしくは、一定時間以上古い際読み込みはしない。&lt;/p&gt;
+
+&lt;h3 id="サーバプリケーション"&gt;サーバプリケーション&lt;/h3&gt;
+
+&lt;h3 id="webクラスタ"&gt;Webクラスタ&lt;/h3&gt;
+
+&lt;p&gt;HTTP要求は仮想アドレス(Webスイッチ)に送られ、
+Webスイッチが負荷状況を考慮して適当な
+Webサーバに転送する。&lt;/p&gt;
+
+&lt;p&gt;例えばラウンドロビンアルゴリズムなどが使用される。&lt;/p&gt;
+
+&lt;p&gt;Webスイッチがボトルネックにならないように注意する必要がある。&lt;/p&gt;
+
+&lt;h3 id="ミラーリング"&gt;ミラーリング&lt;/h3&gt;
+
+&lt;p&gt;速達生を必要しないソフトウェアダウンロードサイトに多い。&lt;/p&gt;
+
+&lt;p&gt;例としてRing Serverが挙げられる。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>middleman</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/15/01.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/15/01.html</id>
+    <published>2015-01-14T15:00:00Z</published>
+    <updated>2015-02-16T17:03:19+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h3 id="ブロードキャストストリームの見分け方"&gt;ブロードキャストストリームの見分け方&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;no buffer&lt;/li&gt;
+&lt;li&gt;ignored&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ちなみに&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;dribble condition
+は、&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="serial-のデフォルトのカプセル化タイプ"&gt;serial のデフォルトのカプセル化タイプ&lt;/h3&gt;
+
+&lt;p&gt;HDLC&lt;/p&gt;
+
+&lt;h3 id="cdp"&gt;CDP&lt;/h3&gt;
+
+&lt;p&gt;CDP =&amp;gt; レイヤ2&lt;/p&gt;
+
+&lt;h3 id="デフォルトのコンフィギュレーションレジスタ"&gt;デフォルトのコンフィギュレーションレジスタ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;0x2102
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;0~3 ブート方法
+6   NVRAMの無視
+8   ブレーク信号の無視&lt;/p&gt;
+
+&lt;p&gt;ルータのボーレートのデフォルト値
+    9600
+ROMMONのレジスタ
+    0x2100&lt;/p&gt;
+
+&lt;p&gt;Flash→TFTPサーバ→ROM
+(ROMにはMini IOS)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Ctrl ＋ Shift ＋ 6 + 「X」で中断
+    ー＞　resume 番号　で再開
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ネットワーク</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/09/01.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/09/01.html</id>
+    <published>2014-12-08T15:00:00Z</published>
+    <updated>2015-02-16T17:03:19+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h3 id="ブロードキャストストリームの見分け方"&gt;ブロードキャストストリームの見分け方&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;no buffer&lt;/li&gt;
+&lt;li&gt;ignored&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ちなみに&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;dribble condition
+は、&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="serial-のデフォルトのカプセル化タイプ"&gt;serial のデフォルトのカプセル化タイプ&lt;/h3&gt;
+
+&lt;p&gt;HDLC&lt;/p&gt;
+
+&lt;h3 id="cdp"&gt;CDP&lt;/h3&gt;
+
+&lt;p&gt;CDP =&amp;gt; レイヤ2&lt;/p&gt;
+
+&lt;h3 id="デフォルトのコンフィギュレーションレジスタ"&gt;デフォルトのコンフィギュレーションレジスタ&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;0x2102
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;0~3 ブート方法
+6   NVRAMの無視
+8   ブレーク信号の無視&lt;/p&gt;
+
+&lt;p&gt;ルータのボーレートのデフォルト値
+    9600
+ROMMONのレジスタ
+    0x2100&lt;/p&gt;
+
+&lt;p&gt;Flash→TFTPサーバ→ROM
+(ROMにはMini IOS)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Ctrl ＋ Shift ＋ 6 + 「X」で中断
+    ー＞　resume 番号　で再開
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+  </entry>
+  <entry>
+    <title>サーバ勉強会(3)</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/01.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/01.html</id>
+    <published>2014-12-04T15:00:00Z</published>
+    <updated>2015-02-16T17:03:19+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h3 id="必要なプログラム"&gt;必要なプログラム&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rvm &lt;/li&gt;
+&lt;li&gt;ruby&lt;/li&gt;
+&lt;li&gt;gem&lt;/li&gt;
+&lt;li&gt;unicorn&lt;/li&gt;
+&lt;li&gt;rails&lt;/li&gt;
+&lt;li&gt;svn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;#lif &amp;lt;= 基幹サーバ&lt;/p&gt;
+
+&lt;p&gt;apacheが入ってる。&lt;/p&gt;
+
+&lt;h3 id="サーバの配備方法の説明"&gt;サーバの配備方法の説明&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="&amp;amp;quot;http://ecl.info.kindai.ac.jp/ecl/wiki/Railsアプリのサーバ配備方法&amp;amp;quot;"&gt;Railsアプリのサーバ配備方法&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;rails アプリケーション(４版)も参考にしてね。&lt;/p&gt;
+
+&lt;h3 id="rails-配備方法"&gt;rails 配備方法&lt;/h3&gt;
+
+&lt;h4 id="便利なssh"&gt;便利なssh&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;ssh 名前
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ホームディレクトリ以下に、&lt;em&gt;.ssh/config&lt;/em&gt;というファイルを作る&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host 名前
+  HostName URL(IPアドレス)
+  User ユーザ名
+  Port ポート番号
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id="デメリット"&gt;デメリット&lt;/h5&gt;
+
+&lt;p&gt;本当のコマンドを忘れる&lt;/p&gt;
+
+&lt;p&gt;vzctl enter 3100&lt;/p&gt;
+
+&lt;p&gt;サービスのsvn
+* svn/ecl_services &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;svn checkout URLパス&lt;/li&gt;
+&lt;li&gt;rvn use version&lt;/li&gt;
+&lt;li&gt;gem list&lt;/li&gt;
+&lt;li&gt;rvm gemset list&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;vim Gemfile&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;gem unicorn&lt;/li&gt;
+&lt;li&gt;→ gem unicorn&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;bundle install&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;rvm &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;1.92    – rails 2
+    -  rails 3
+2.0 - rails 2
+    - rails 3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;rake db:migrate RAILS\_ENV =production
+    → prodction.sqlit3
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="unicornの設定ファイル"&gt;unicornの設定ファイル&lt;/h4&gt;
+
+&lt;ul&gt;
+&lt;li&gt;cp ../..//wa/wiki/config/unicorn_prodction.rb&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;    Workers プロセスの立ち上げ数(コア数の1.5倍まで)
+    AppliDir    ディレクトリ
+    Port        ポート番号
+    TimeOut タイムアウト秒
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;config.ruをいじる&lt;/li&gt;
+&lt;li&gt;config.server&lt;em&gt;static&lt;/em&gt;assets=true (静的ファイルのコンパイル）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="publicしか公開されないので、移す"&gt;publicしか公開されないので、移す&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;rake assets:precompile RAILS_RELATIVE_URL_ROOT=/14/test/attendance
+
+unicorn_rails -c コンフィグファイル -E 環境 –path=URLのパス -D バックグラウンドか否か
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;tail -f log_unicorn.54709.log
+
+    worker=0 readyとなっていればおk
+
+cat temp/pids/unicorn.pid
+    =&amp;gt;プロセス番号
+kill  &amp;#39;cat temp/pids/unicorn.pid&amp;#39;
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="サーバを公開する"&gt;サーバを公開する&lt;/h3&gt;
+
+&lt;p&gt;サーバを出る
+lifが別サーバに応答を飛ばしている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;cd /etc/apache2
+    sites-available     全ての設定ファイル
+    sites-enabled       適用している設定ファイル
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="シンボリックリンク"&gt;シンボリックリンク&lt;/h4&gt;
+
+&lt;pre&gt;&lt;code&gt;12_wa_wiki =&amp;gt; ../sites-available/14_wa_wiki
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id="apach設定ファイルを作ろう！"&gt;apach設定ファイルを作ろう！&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;ProxyPass　        パス  飛ばす先のパス
+ProxyPassReverse    パス　   飛ばす先のパス   // リバースプロキシ
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;a2ensite 設定ファイル名 (切り方: a2dissite)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id="エラー検出"&gt;エラー検出&lt;/h4&gt;
+
+&lt;p&gt;apache2ctl -t&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;apachの再起動&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;/etc/init.d apache2 reload
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;(restartはリクエストを返さず、シャットダウン）&lt;/p&gt;
+
+&lt;h4 id="apacheの設定ファイル"&gt;apacheの設定ファイル&lt;/h4&gt;
+
+&lt;p&gt;apache2.conf&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;include で読み込み、展開&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>js勉強会</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/02.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/02.html</id>
+    <published>2014-12-04T15:00:00Z</published>
+    <updated>2015-02-16T17:03:19+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;p&gt;addEvent~とかgetElement~は長い。
+よってシンプルな表記にしたい。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;prototype.js&lt;/li&gt;
+&lt;li&gt;jQuery&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;jQueryは独自のプラグインを使えるので、
+拡張性が高いので現在使われている。&lt;/p&gt;
+
+&lt;h4 id="version"&gt;version&lt;/h4&gt;
+
+&lt;p&gt;1系と2系がある。
+2系はIEの9以前は切り捨てているので、
+今回は1系を使う。&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="&amp;amp;quot;http://www.jquerystudy.info/&amp;amp;quot;"&gt;jQuery入門&lt;/a&gt;を参考にしてね。
+ダウンロード
+&lt;a href="&amp;amp;quot;http://jquery.com/download/&amp;amp;quot;"&gt;jQuery&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;compressed:サイズが小さい。見にくい。&lt;/li&gt;
+&lt;li&gt;uncompressed:サイズが大きい。見やすい。(学習用)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;pre&gt;&lt;code&gt;document.getElementById(&amp;quot;ID&amp;quot;).innerHTML = &amp;quot;にゃんにゃん&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;$(&amp;quot;ID&amp;quot;).text(&amp;quot;にゃんにゃん&amp;quot;);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;:r!ls&lt;/p&gt;
+
+&lt;p&gt;:sp
+:edit sample.js&lt;/p&gt;
+</content>
+  </entry>
+</feed>

@@ -1,0 +1,676 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    </script>
+    <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />   
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width">   
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>第1回</title>
+    <link href="/~ikageso/css/jquery.sidr.light.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/~ikageso/css/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->   
+		<script src="/~ikageso/js/ie8.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/all.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/blog.js" type="text/javascript"></script>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+    <script src="/stylesheets/bootstrap/js/bootstrap.min.js"></script>
+ </head> 
+
+<body class="blog blog_2014 blog_2014_09 blog_2014_09_17 blog_2014_09_17_01">
+	<!-- グロナビ -->
+<nav class="navbar-inverse  navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
+<div class="navbar-header">
+
+<a class="navbar-brand" id="simple-menu" href="#sidr">
+<span class="glyphicon glyphicon-th-list"></span>
+</a>
+  
+<!-- 
+
+メニューボタン 
+
+data-toggle : ボタンを押したときにNavbarを開かせるために必要
+data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
+
+-->
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+<!-- タイトルなどのテキスト -->
+<a class="navbar-brand active" href="/~ikageso/">ikageso.jp</a></div>
+
+<!-- グローバルナビの中身 -->
+<div class="collapse navbar-collapse" id="nav-menu-1">
+
+<!-- 各ナビゲーションメニュー -->
+<ul class="nav navbar-nav">
+
+<!-- 通常のリンク -->
+<li><a href="/~ikageso/profile.html">Profile</a></li>
+<li><a href="/~ikageso/blog.html">Blog</a></li>
+<li><a href="/~ikageso/link.html">Link</a></li>
+<!-- ドロップダウンのメニューも配置可能 -->
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents<b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li><a href="/network.html">ネットワーク</a></li>
+	<li><a href="/design.html">デザパタ</a></li>
+	<li><a href="/distribute.html">分散システム</a></li>
+	<li><a href="/ruby.html">Ruby</a></li>
+</ul>
+</li>
+</nav>
+
+
+<!--
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button"> 
+        <span class="sr-only"> Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ikageso.log</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <ul class="list-unstyled list-inline nav navbar-nav navbar-right">
+        <li>
+          <a href="#twitter">
+						<i class="fa fa-twitter-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#facebook">
+						<i class="fa fa-facebook-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#github">
+						<i class="fa fa-github-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#google-plus">
+						<i class="fa fa-google-plus-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#linkedin">
+						<i class="fa fa-linkedin-square fa-lg fa-inverse"></i>
+          </a>       
+				</li>
+			</ul>
+     </div>
+	</div>
+</nav>
+-->
+
+	<div class ="container">
+		 <div class= "row">
+			 <div class="col-lg-3 col-md-3" id="sidebar">
+  <div class="well">
+    <h4>タグ</h4>
+    <ul class="list-unstyled">
+      
+				<li>
+				<a href="/~ikageso/blog/tags/example.html">example</a>
+          |  (
+					3
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/odd.html">odd</a>
+          |  (
+					2
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/even.html">even</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/卒研ゼミ.html">卒研ゼミ</a>
+          |  (
+					7
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/ネットワーク.html">ネットワーク</a>
+          |  (
+					5
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/分散システム.html">分散システム</a>
+          |  (
+					3
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/情報システムプロジェクト2.html">情報システムプロジェクト2</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/勉強会.html">勉強会</a>
+          |  (
+					4
+          | )
+				</li>
+       
+    </ul>
+  </div>
+  <div class="well">
+    <h4>年</h4>
+    <ol>
+       
+        <li>
+          <a href="/~ikageso/blog/2015.html">2015</a>
+          |  (
+          3
+          | )
+				</li>
+			 
+        <li>
+          <a href="/~ikageso/blog/2014.html">2014</a>
+          |  (
+          21
+          | )
+				</li>
+			 	
+		 </ol>
+	 </div>
+<div class="well">
+ <h4>最近更新した記事</h4>
+ <ol>
+  
+  <li><a href="/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html">PuppyLinixでSSHサーバ構築</a> <span>Nov 21</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/01/16/01.html">第15回</a> <span>Jan 16</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/01/15/01.html">middleman</a> <span>Jan 15</span></li>
+  
+  <li><a href="/~ikageso/blog/2014/12/09/01.html">ネットワーク</a> <span>Dec  9</span></li>
+  
+  <li><a href="/~ikageso/blog/2014/12/05/01.html">サーバ勉強会(3)</a> <span>Dec  5</span></li>
+  
+  </ol>
+</div>
+</div>
+
+			 <div class="col-lg-9 col-md-9">
+				 
+						<h1> <span class="title">第一回:静的Webサイトの構築 </span> </h1>
+						<p>
+						<small class="label label-default">卒研ゼミ</small>
+						</p>
+						<hr>
+					 <h4 id="rubyのバージョン確認">rubyのバージョン確認</h4>
+
+<pre>ruby -v</pre>
+
+<h4 id="railsのバージョン確認">railsのバージョン確認</h4>
+
+<pre>rails -v</pre>
+
+<h4 id="ファイル共有">ファイル共有</h4>
+
+<h5 id="ディレクトリによる共有">ディレクトリによる共有</h5>
+
+<p>vagrant側の&quot;/vagrant&quot;ディレクトリと、
+MacOS側のVagrantfileが置かれているディレクトリは共有となっている</p>
+
+<h5 id="scpによる共有">scpによる共有</h5>
+
+<pre>vagrant ssh-config</pre>
+
+<p>上記のコマンドで設定が出力される。
+これをリダイレクトして適当なファイルに保存する。<br>
+送信するときはscpの-Fをファイルを指定して送信。
+<pre>scp　-F　コンフィグファイル　vagrant@default:送信したいファイルパス</pre></p>
+
+<h4 id="ポートフォーワディングの設定">ポートフォーワディングの設定</h4>
+
+<p>Vagrantfileファイルを編集して以下のように設定</p>
+
+<pre><code>config.vm.network  &quot;forwaded\_port&quot;,guest 4567,host 4000
+</code></pre>
+
+<p>この場合は仮想OSのポート4567をホスト側4000に対応させている。</p>
+
+<h4 id="middlemanのコマンド">Middlemanのコマンド</h4>
+
+<ul>
+<li>新規作成</li>
+</ul>
+
+<pre><code>middleman init プロジェクト名
+</code></pre>
+
+<ul>
+<li>サーバ立ち上げ</p></li>
+</ul>
+
+<pre><code>middleman server
+</code></pre>
+
+<ul>
+<li>静的ファイル作成</p></li>
+</ul>
+
+<pre><code>middleman build
+</code></pre>
+
+<p>これはproject/buildディレクトリ以下にファイルが生成される。</p>
+
+<h4 id="ブログの作り方">ブログの作り方</h4>
+
+<p>Gemfileに</p>
+
+<pre><code>gem &quot;middleman-blog&quot;
+</code></pre>
+
+<p>といれて、<strong>bundle update</strong>をする。
+その後、<strong>middleman init</strong>を再実行。</p>
+
+<p>実行後、記事をblogというディレクトリにまとめたい場合は、
+config.rb内の</p>
+
+<pre><code>blog.prefix = &quot;blog&quot;
+</code></pre>
+
+<p>のコメントアウトを外せば良い。</p>
+
+<h4 id="ブログの書き方">ブログの書き方</h4>
+
+<p>初期の状態であれば、ファイル名を</p>
+
+<blockquote>
+<p>年-月-日-番号.html.markdown</p>
+</blockquote>
+
+<p>とすればよい。
+ファイルの一番上に以下のように記事の情報を書く。</p>
+
+<pre><code>---
+title: 第1回 
+date: 2014-09-17
+tags: sotuken
+---
+</code></pre>
+
+<p>ここで指定した情報は外のファイルで</p>
+
+<pre><code>&lt;% blog.tags.each do |tag, articles| %&gt;
+や
+&lt;title&gt;&lt;%= current_page.data.title || &quot;The Middleman&quot; %&gt;&lt;/title&gt;
+</code></pre>
+
+<p>とすることで、取って来れる。</p>
+
+<h4 id="レイアウト">レイアウト</h4>
+
+<p>レイアウトはlayout.erbというファイルで行われている。
+其々の記事は<strong>yield</strong>という部分に埋め込まれる。</p>
+
+<p>参考までに、私のblogのレイアウトを紹介する。</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+
+    &lt;!-- Always force latest IE rendering engine or request Chrome Frame --&gt;
+    &lt;meta content=&quot;IE=edge,chrome=1&quot; http-equiv=&quot;X-UA-Compatible&quot;&gt;
+
+    &lt;!-- Use title if it&#39;s in the page YAML frontmatter --&gt;
+    &lt;title&gt;&lt;%= current_page.data.title || &quot;The Middleman&quot; %&gt;&lt;/title&gt;
+
+    &lt;%= stylesheet_link_tag &quot;normalize&quot;, &quot;all&quot;,&quot;hatena&quot; %&gt;
+    &lt;%= javascript_include_tag  &quot;all&quot; %&gt;
+    &lt;%= feed_tag :atom, &quot;#{blog.options.prefix.to_s}/feed.xml&quot;, title: &quot;Atom Feed&quot; %&gt;
+  &lt;/head&gt;
+
+  &lt;body class=&quot;&lt;%= page_classes %&gt;&quot;&gt;
+  &lt;h1&gt;&lt;%= current_page.data.tagname %&gt;&lt;/h1&gt;
+  &lt;div class=&quot;main&quot;&gt;
+    &lt;div class=&quot;day&quot;&gt;
+      &lt;h2&gt; &lt;span class=&quot;title&quot;&gt;&lt;%= current_page.data.maintitle %&gt; &lt;/span&gt; &lt;/h2&gt;
+      &lt;div class=&quot;body&quot;&gt;
+        &lt;%= yield %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h1&gt;Twitter&lt;/h1&gt;
+    &lt;p&gt;本Webサイトへのご意見、ご連絡等は私のTwitterアカウント
+    &lt;a href=&quot;https://twitter.com/Ikageso201&quot;&gt;@ikageso201&lt;/a&gt;にお願い致します。&lt;br&gt;
+    また、Twitter では更新情報を掲載することになります．よければフォローよろしくね。くコ:彡&lt;/p&gt; 
+    &lt;a class=&quot;twitter-timeline&quot; href=&quot;https://twitter.com/Ikageso201&quot; data-widget-id=&quot;520527934054866946&quot;&gt;@Ikageso201 からのツイート&lt;/a&gt;
+    &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+    p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);
+    js.id=id;js.src=p+&quot;://platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);
+    }}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+    &lt;div class=&quot;sidebar&quot;&gt;
+      &lt;iframe src=&lt;%= current_page.data.sidebar %&gt; width=&quot;160&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;refererlist&quot;&gt;
+     &lt;ul&gt;
+      &lt;li&gt;refererlist&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>複数のファイルに分けたいときは、
+config.rbファイルで</p>
+
+<pre><code>page &quot;指定したいファイル名&quot;, :layout =&gt; &quot;ファイル名&quot;
+</code></pre>
+
+<p>とすれば良い。もしくはブログ側のレイアウトをconfig.rbで</p>
+
+<pre><code>activate :blog do |blog|
+  blog.layout = &quot;blog&quot;
+</code></pre>
+
+<p>としてもよい。</p>
+
+<h4 id="記事を書くときの注意点">記事を書くときの注意点</h4>
+
+<p>よほどの事が無い限り、Markdown方式で書く事をお勧めする。
+しかし、注意点として、Markdown方式は<strong>divタグ等の中に記述する事が出来ない</strong>。
+divタグの中で書きたい場合は、先にlayout側でdivでくくっておく等の工夫が必要である。</p>
+
+					 <hr>
+
+
+    <h1>Twitter</h1>
+    <p>本Webサイトへのご意見、ご連絡等は私のTwitterアカウント
+    <a href="https://twitter.com/Ikageso201">@ikageso201</a>にお願い致します。<br>
+    また、Twitter では更新情報を掲載することになります．よければフォローよろしくね。くコ:彡</p> 
+    <a class="twitter-timeline" href="https://twitter.com/Ikageso201" data-widget-id="520527934054866946">@Ikageso201 からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+    p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);
+    js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);
+    }}(document,"script","twitter-wjs");</script>
+   </div>
+
+
+			 	 
+			 </div>
+		 </div>
+		</div>
+	<!--	
+
+  <h1>卒研ゼミ</h1>
+  <div class="main">
+    <div class="day">
+      <h2> <span class="title">第一回:静的Webサイトの構築 </span> </h2>
+      <div class="body">
+        <h4 id="rubyのバージョン確認">rubyのバージョン確認</h4>
+
+<pre>ruby -v</pre>
+
+<h4 id="railsのバージョン確認">railsのバージョン確認</h4>
+
+<pre>rails -v</pre>
+
+<h4 id="ファイル共有">ファイル共有</h4>
+
+<h5 id="ディレクトリによる共有">ディレクトリによる共有</h5>
+
+<p>vagrant側の&quot;/vagrant&quot;ディレクトリと、
+MacOS側のVagrantfileが置かれているディレクトリは共有となっている</p>
+
+<h5 id="scpによる共有">scpによる共有</h5>
+
+<pre>vagrant ssh-config</pre>
+
+<p>上記のコマンドで設定が出力される。
+これをリダイレクトして適当なファイルに保存する。<br>
+送信するときはscpの-Fをファイルを指定して送信。
+<pre>scp　-F　コンフィグファイル　vagrant@default:送信したいファイルパス</pre></p>
+
+<h4 id="ポートフォーワディングの設定">ポートフォーワディングの設定</h4>
+
+<p>Vagrantfileファイルを編集して以下のように設定</p>
+
+<pre><code>config.vm.network  &quot;forwaded\_port&quot;,guest 4567,host 4000
+</code></pre>
+
+<p>この場合は仮想OSのポート4567をホスト側4000に対応させている。</p>
+
+<h4 id="middlemanのコマンド">Middlemanのコマンド</h4>
+
+<ul>
+<li>新規作成</li>
+</ul>
+
+<pre><code>middleman init プロジェクト名
+</code></pre>
+
+<ul>
+<li>サーバ立ち上げ</p></li>
+</ul>
+
+<pre><code>middleman server
+</code></pre>
+
+<ul>
+<li>静的ファイル作成</p></li>
+</ul>
+
+<pre><code>middleman build
+</code></pre>
+
+<p>これはproject/buildディレクトリ以下にファイルが生成される。</p>
+
+<h4 id="ブログの作り方">ブログの作り方</h4>
+
+<p>Gemfileに</p>
+
+<pre><code>gem &quot;middleman-blog&quot;
+</code></pre>
+
+<p>といれて、<strong>bundle update</strong>をする。
+その後、<strong>middleman init</strong>を再実行。</p>
+
+<p>実行後、記事をblogというディレクトリにまとめたい場合は、
+config.rb内の</p>
+
+<pre><code>blog.prefix = &quot;blog&quot;
+</code></pre>
+
+<p>のコメントアウトを外せば良い。</p>
+
+<h4 id="ブログの書き方">ブログの書き方</h4>
+
+<p>初期の状態であれば、ファイル名を</p>
+
+<blockquote>
+<p>年-月-日-番号.html.markdown</p>
+</blockquote>
+
+<p>とすればよい。
+ファイルの一番上に以下のように記事の情報を書く。</p>
+
+<pre><code>---
+title: 第1回 
+date: 2014-09-17
+tags: sotuken
+---
+</code></pre>
+
+<p>ここで指定した情報は外のファイルで</p>
+
+<pre><code>&lt;% blog.tags.each do |tag, articles| %&gt;
+や
+&lt;title&gt;&lt;%= current_page.data.title || &quot;The Middleman&quot; %&gt;&lt;/title&gt;
+</code></pre>
+
+<p>とすることで、取って来れる。</p>
+
+<h4 id="レイアウト">レイアウト</h4>
+
+<p>レイアウトはlayout.erbというファイルで行われている。
+其々の記事は<strong>yield</strong>という部分に埋め込まれる。</p>
+
+<p>参考までに、私のblogのレイアウトを紹介する。</p>
+
+<pre><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+
+    &lt;!-- Always force latest IE rendering engine or request Chrome Frame --&gt;
+    &lt;meta content=&quot;IE=edge,chrome=1&quot; http-equiv=&quot;X-UA-Compatible&quot;&gt;
+
+    &lt;!-- Use title if it&#39;s in the page YAML frontmatter --&gt;
+    &lt;title&gt;&lt;%= current_page.data.title || &quot;The Middleman&quot; %&gt;&lt;/title&gt;
+
+    &lt;%= stylesheet_link_tag &quot;normalize&quot;, &quot;all&quot;,&quot;hatena&quot; %&gt;
+    &lt;%= javascript_include_tag  &quot;all&quot; %&gt;
+    &lt;%= feed_tag :atom, &quot;#{blog.options.prefix.to_s}/feed.xml&quot;, title: &quot;Atom Feed&quot; %&gt;
+  &lt;/head&gt;
+
+  &lt;body class=&quot;&lt;%= page_classes %&gt;&quot;&gt;
+  &lt;h1&gt;&lt;%= current_page.data.tagname %&gt;&lt;/h1&gt;
+  &lt;div class=&quot;main&quot;&gt;
+    &lt;div class=&quot;day&quot;&gt;
+      &lt;h2&gt; &lt;span class=&quot;title&quot;&gt;&lt;%= current_page.data.maintitle %&gt; &lt;/span&gt; &lt;/h2&gt;
+      &lt;div class=&quot;body&quot;&gt;
+        &lt;%= yield %&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;h1&gt;Twitter&lt;/h1&gt;
+    &lt;p&gt;本Webサイトへのご意見、ご連絡等は私のTwitterアカウント
+    &lt;a href=&quot;https://twitter.com/Ikageso201&quot;&gt;@ikageso201&lt;/a&gt;にお願い致します。&lt;br&gt;
+    また、Twitter では更新情報を掲載することになります．よければフォローよろしくね。くコ:彡&lt;/p&gt; 
+    &lt;a class=&quot;twitter-timeline&quot; href=&quot;https://twitter.com/Ikageso201&quot; data-widget-id=&quot;520527934054866946&quot;&gt;@Ikageso201 からのツイート&lt;/a&gt;
+    &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+    p=/^http:/.test(d.location)?&#39;http&#39;:&#39;https&#39;;if(!d.getElementById(id)){js=d.createElement(s);
+    js.id=id;js.src=p+&quot;://platform.twitter.com/widgets.js&quot;;fjs.parentNode.insertBefore(js,fjs);
+    }}(document,&quot;script&quot;,&quot;twitter-wjs&quot;);&lt;/script&gt;
+
+    &lt;div class=&quot;sidebar&quot;&gt;
+      &lt;iframe src=&lt;%= current_page.data.sidebar %&gt; width=&quot;160&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;refererlist&quot;&gt;
+     &lt;ul&gt;
+      &lt;li&gt;refererlist&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>複数のファイルに分けたいときは、
+config.rbファイルで</p>
+
+<pre><code>page &quot;指定したいファイル名&quot;, :layout =&gt; &quot;ファイル名&quot;
+</code></pre>
+
+<p>とすれば良い。もしくはブログ側のレイアウトをconfig.rbで</p>
+
+<pre><code>activate :blog do |blog|
+  blog.layout = &quot;blog&quot;
+</code></pre>
+
+<p>としてもよい。</p>
+
+<h4 id="記事を書くときの注意点">記事を書くときの注意点</h4>
+
+<p>よほどの事が無い限り、Markdown方式で書く事をお勧めする。
+しかし、注意点として、Markdown方式は<strong>divタグ等の中に記述する事が出来ない</strong>。
+divタグの中で書きたい場合は、先にlayout側でdivでくくっておく等の工夫が必要である。</p>
+
+      </div>
+
+			--> 
+<div id="sidr">
+<!-- Your content -->
+<ul>
+ 
+   
+  
+   
+  
+   
+  
+   
+    
+     <li><a href="/~ikageso/blog/2014/09/17/01.html">第1回</a></li>
+    
+     <li><a href="/~ikageso/blog/2014/09/24/01.html">第2回</a></li>
+    
+     <li><a href="/~ikageso/blog/2014/10/01/01.html">第3回</a></li>
+    
+     <li><a href="/~ikageso/blog/2014/10/08/01.html">第4回</a></li>
+    
+     <li><a href="/~ikageso/blog/2014/10/15/01.html">第5回</a></li>
+    
+     <li><a href="/~ikageso/blog/2014/10/22/01.html">第6回</a></li>
+    
+     <li><a href="/~ikageso/blog/2015/01/15/01.html">middleman</a></li>
+    
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+</ul>
+</div>
+
+<script src="/~ikageso/js/jquery.sidr.min.js" type="text/javascript"></script><script>
+$(document).ready(function() {
+$('#simple-menu').sidr();
+});
+</script>
+</body>
+</html>
