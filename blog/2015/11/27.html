@@ -1,0 +1,439 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
+    </script>
+    <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+    </script>
+    <meta http-equiv="X-UA-Compatible" CONTENT="IE=EmulateIE7" />   
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width">   
+    <!-- Use title if it's in the page YAML frontmatter -->
+    <title>The Middleman</title>
+    <link href="/~ikageso/css/jquery.sidr.light.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/~ikageso/css/blog.css" media="screen" rel="stylesheet" type="text/css" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->   
+		<script src="/~ikageso/js/ie8.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/jquery.min.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/all.js" type="text/javascript"></script>
+    <script src="/~ikageso/js/blog.js" type="text/javascript"></script>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/blog/feed.xml" />
+    <script src="/stylesheets/bootstrap/js/bootstrap.min.js"></script>
+ </head> 
+
+<body class="blog blog_2015 blog_2015_11 blog_2015_11_27">
+	<!-- グロナビ -->
+<nav class="navbar-inverse  navbar-fixed-top" role="navigation">
+<div class="container-fluid">
+<!-- スマートフォンサイズで表示されるメニューボタンとテキスト -->
+<div class="navbar-header">
+
+<a class="navbar-brand" id="simple-menu" href="#sidr">
+<span class="glyphicon glyphicon-th-list"></span>
+</a>
+  
+<!-- 
+
+メニューボタン 
+
+data-toggle : ボタンを押したときにNavbarを開かせるために必要
+data-target : 複数navbarを作成する場合、ボタンとナビを紐づけるために必要
+
+-->
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-menu-1">
+<span class="sr-only">Toggle navigation</span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</button>
+
+<!-- タイトルなどのテキスト -->
+<a class="navbar-brand active" href="/~ikageso/">ikageso.jp</a></div>
+
+<!-- グローバルナビの中身 -->
+<div class="collapse navbar-collapse" id="nav-menu-1">
+
+<!-- 各ナビゲーションメニュー -->
+<ul class="nav navbar-nav">
+
+<!-- 通常のリンク -->
+<li><a href="/~ikageso/profile.html">Profile</a></li>
+<li><a href="/~ikageso/blog.html">Blog</a></li>
+<li><a href="/~ikageso/link.html">Link</a></li>
+<!-- ドロップダウンのメニューも配置可能 -->
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown">Contents<b class="caret"></b></a>
+<ul class="dropdown-menu">
+	<li><a href="/network.html">ネットワーク</a></li>
+	<li><a href="/design.html">デザパタ</a></li>
+	<li><a href="/distribute.html">分散システム</a></li>
+	<li><a href="/ruby.html">Ruby</a></li>
+</ul>
+</li>
+</nav>
+
+
+<!--
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" data-target=".navbar-ex1-collapse" data-toggle="collapse" type="button"> 
+        <span class="sr-only"> Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">ikageso.log</a>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="#about">About</a>
+        </li>
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+      </ul>
+      <ul class="list-unstyled list-inline nav navbar-nav navbar-right">
+        <li>
+          <a href="#twitter">
+						<i class="fa fa-twitter-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#facebook">
+						<i class="fa fa-facebook-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#github">
+						<i class="fa fa-github-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#google-plus">
+						<i class="fa fa-google-plus-square fa-lg fa-inverse"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#linkedin">
+						<i class="fa fa-linkedin-square fa-lg fa-inverse"></i>
+          </a>       
+				</li>
+			</ul>
+     </div>
+	</div>
+</nav>
+-->
+
+	<div class ="container">
+		 <div class= "row">
+			 <div class="col-lg-3 col-md-3" id="sidebar">
+  <div class="well">
+    <h4>タグ</h4>
+    <ul class="list-unstyled">
+      
+				<li>
+				<a href="/~ikageso/blog/tags/example.html">example</a>
+          |  (
+					3
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/odd.html">odd</a>
+          |  (
+					2
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/even.html">even</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/卒研ゼミ.html">卒研ゼミ</a>
+          |  (
+					6
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/ネットワーク.html">ネットワーク</a>
+          |  (
+					5
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/分散システム.html">分散システム</a>
+          |  (
+					3
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/情報システムプロジェクト2.html">情報システムプロジェクト2</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/勉強会.html">勉強会</a>
+          |  (
+					4
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/blog.html">blog</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/server.html">server</a>
+          |  (
+					2
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/food.html">food</a>
+          |  (
+					1
+          | )
+				</li>
+       
+    </ul>
+  </div>
+  <div class="well">
+    <h4>年</h4>
+    <ol>
+       
+        <li>
+          <a href="/~ikageso/blog/2015.html">2015</a>
+          |  (
+          6
+          | )
+				</li>
+			 
+        <li>
+          <a href="/~ikageso/blog/2014.html">2014</a>
+          |  (
+          21
+          | )
+				</li>
+			 	
+		 </ol>
+	 </div>
+<div class="well">
+ <h4>最近更新した記事</h4>
+ <ol>
+  
+  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a> <span>Nov 27</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/11/22/test.html">test</a> <span>Nov 22</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a> <span>Nov 21</span></li>
+  
+  </ol>
+</div>
+</div>
+
+			 <div class="col-lg-9 col-md-9">
+				 
+						<h1> <span class="title"> </span> </h1>
+						<p>
+						<small class="label label-default"></small>
+						</p>
+						<hr>
+					 <h1>
+  Archive for Nov 27 2015
+</h1>
+<ul>
+  <h2>
+    <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a>
+  </h2>
+  <p>
+    <small class="label label-default">server</small>
+  </p>
+  <hr />
+  <p>
+    <span class="glyphicon glyphicon-time"></span> Posted on Nov 27
+  </p>
+  <hr /><h1 id="背景">背景</h1>
+
+<h1 id="手法">手法</h1>
+
+<ol>
+<li>ファイルタイプを調べる
+
+<ul>
+<li>  <code>parted -l</code>
+</li>
+</ul>
+</li>
+<li>デバイスをマウントする
+
+<ul>
+<li><code>mount -t ファイルタイプ /dev/マウント元 /mnt/マウント先</code></li>
+</ul>
+</li>
+<li>ホスト名を調べる
+
+<ul>
+<li><code>cat /mnt/バックアップ元/etc/hostname</code></li>
+</ul>
+</li>
+<li>バックアップ先のディレクトリを作る
+
+<ul>
+<li><code>mkdir /mnt/バックアップ先/ホスト名_backup</code></li>
+</ul>
+</li>
+<li>バックアップする
+
+<ul><li>
+<code>
+cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
+<code>/mnt/バックアップ先/ホスト...</code>
+</li></ul>
+</li>
+</ol><a class="btn btn-primary" href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <hr />
+</ul>
+					 <hr>
+
+
+    <h1>Twitter</h1>
+    <p>本Webサイトへのご意見、ご連絡等は私のTwitterアカウント
+    <a href="https://twitter.com/Ikageso201">@ikageso201</a>にお願い致します。<br>
+    また、Twitter では更新情報を掲載することになります．よければフォローよろしくね。くコ:彡</p> 
+    <a class="twitter-timeline" href="https://twitter.com/Ikageso201" data-widget-id="520527934054866946">@Ikageso201 からのツイート</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],
+    p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);
+    js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);
+    }}(document,"script","twitter-wjs");</script>
+   </div>
+
+
+			 	 
+			 </div>
+		 </div>
+		</div>
+	<!--	
+
+  <h1></h1>
+  <div class="main">
+    <div class="day">
+      <h2> <span class="title"> </span> </h2>
+      <div class="body">
+        <h1>
+  Archive for Nov 27 2015
+</h1>
+<ul>
+  <h2>
+    <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a>
+  </h2>
+  <p>
+    <small class="label label-default">server</small>
+  </p>
+  <hr />
+  <p>
+    <span class="glyphicon glyphicon-time"></span> Posted on Nov 27
+  </p>
+  <hr /><h1 id="背景">背景</h1>
+
+<h1 id="手法">手法</h1>
+
+<ol>
+<li>ファイルタイプを調べる
+
+<ul>
+<li>  <code>parted -l</code>
+</li>
+</ul>
+</li>
+<li>デバイスをマウントする
+
+<ul>
+<li><code>mount -t ファイルタイプ /dev/マウント元 /mnt/マウント先</code></li>
+</ul>
+</li>
+<li>ホスト名を調べる
+
+<ul>
+<li><code>cat /mnt/バックアップ元/etc/hostname</code></li>
+</ul>
+</li>
+<li>バックアップ先のディレクトリを作る
+
+<ul>
+<li><code>mkdir /mnt/バックアップ先/ホスト名_backup</code></li>
+</ul>
+</li>
+<li>バックアップする
+
+<ul><li>
+<code>
+cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
+<code>/mnt/バックアップ先/ホスト...</code>
+</li></ul>
+</li>
+</ol><a class="btn btn-primary" href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <hr />
+</ul>
+      </div>
+
+			--> 
+<div id="sidr">
+<!-- Your content -->
+<ul>
+ 
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+   
+  
+</ul>
+</div>
+
+<script src="/~ikageso/js/jquery.sidr.min.js" type="text/javascript"></script><script>
+$(document).ready(function() {
+$('#simple-menu').sidr();
+});
+</script>
+</body>
+</html>

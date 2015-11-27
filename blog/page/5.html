@@ -151,7 +151,7 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				<li>
 				<a href="/~ikageso/blog/tags/卒研ゼミ.html">卒研ゼミ</a>
           |  (
-					7
+					6
           | )
 				</li>
        
@@ -183,6 +183,27 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
           | )
 				</li>
        
+				<li>
+				<a href="/~ikageso/blog/tags/blog.html">blog</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/server.html">server</a>
+          |  (
+					2
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/food.html">food</a>
+          |  (
+					1
+          | )
+				</li>
+       
     </ul>
   </div>
   <div class="well">
@@ -192,7 +213,7 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
         <li>
           <a href="/~ikageso/blog/2015.html">2015</a>
           |  (
-          3
+          6
           | )
 				</li>
 			 
@@ -209,15 +230,15 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
  <h4>最近更新した記事</h4>
  <ol>
   
-  <li><a href="/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html">PuppyLinixでSSHサーバ構築</a> <span>Nov 21</span></li>
+  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a> <span>Nov 27</span></li>
   
-  <li><a href="/~ikageso/blog/2015/01/16/01.html">第15回</a> <span>Jan 16</span></li>
+  <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
   
-  <li><a href="/~ikageso/blog/2015/01/15/01.html">middleman</a> <span>Jan 15</span></li>
+  <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
   
-  <li><a href="/~ikageso/blog/2014/12/09/01.html">ネットワーク</a> <span>Dec  9</span></li>
+  <li><a href="/~ikageso/blog/2015/11/22/test.html">test</a> <span>Nov 22</span></li>
   
-  <li><a href="/~ikageso/blog/2014/12/05/01.html">サーバ勉強会(3)</a> <span>Dec  5</span></li>
+  <li><a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a> <span>Nov 21</span></li>
   
   </ol>
 </div>
@@ -227,7 +248,106 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				 
 					 <hr>
 					 <h1>
-  <a href="/~ikageso/blog/2014/09/17/01.html">第1回</a>
+  <a href="/~ikageso/blog/2014/09/26/01.html">第2回</a>
+</h1>
+<p>
+  <small class="label label-default">分散システム</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Sep 26
+</p>
+<hr />
+<h5>通信プリミティブ</h5>
+
+<p>プロセスがメッセージを送受信する為のライブラリ関数.
+  </p><ul>
+<li>send:メッセージを送信する</li>
+  <li>receive:メッセージを受信する</li>
+ </ul>
+  性質としては
+  <ol>
+<li>信頼性</li>
+ 正しいメッセージが届くかどうかを示す.
+ 高信頼通信ではメッセージが破壊された場合は再送して保証する.
+ <table border="1">
+<tr>
+<th>高信頼</th>
+<th>バッファ間での整合性</th>
+<br>
+</tr>
+<tr>
+<th>低信頼</th>
+<th>プロセス間での整合性</th>
+</tr>
+</table>
+<li>コネクション</li>
+コネクション型通信はメッセージを受信する際に確認応答を伴う(3 way handshake).
+対して,コネクションレス型通信は...</ol><a class="btn btn-primary" href="/~ikageso/blog/2014/09/26/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2014/09/24/01.html">第二回:Webアプリケーション演習(Rails Tutorial 01,02)</a>
+</h1>
+<p>
+  <small class="label label-default">卒研ゼミ</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Sep 24
+</p>
+<hr /><h4>Git</h4>
+
+<ul>
+<li>インストールとセットアップ</li>
+</ul><pre>
+git config -global user.name 名前
+git config -gloabl user.email Eメール
+</pre>
+  <li>エイリアスをつける</li>
+-&gt; coをcheckoutに対応させる例
+<pre>
+git config -global alias.co checkout
+</pre>
+  <li>リポジトリを作る</li>
+<pre>git init</pre>
+  <li>追加とコミット</li>
+<pre>
+git add .
+git commit -m メッセージ
+</pre>
+  <li>保存せずに,元に戻す</li>
+<pre>
+git checkout...</pre><a class="btn btn-primary" href="/~ikageso/blog/2014/09/24/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2014/09/23/01.html">DHCPの設定</a>
+</h1>
+<p>
+  <small class="label label-default">ネットワーク</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Sep 23
+</p>
+<hr />
+<h3 id="dhcpv4">DHCPv4</h3>
+
+<h4 id="割当メカニズム">割当メカニズム</h4>
+
+<ul>
+<li>手動割り当て:事前に設定されたIPを割り当てる</li>
+<li>自動割り当て:プールから選択されたIPを永続的に割り当てる</li>
+<li>動的割り当て:リースがあり、一定期間のみ割り当てる</li>
+</ul><h4 id="動作">動作</h4>
+
+<ul>
+<li>DHCPDISCOVER:DHCP要求の開始。ブロードキャストで投げられる</li>
+<li>DHCPOFFER:リースするIPアドレスの情報を投げる。また、このときにARPエントリを作成する。</li>
+<li>DHCPREQUEST:受理の確認。リースに更新にも投げられる。</li>
+<li>DHCPACK:確認応答</li>
+</ul><h5 id="メッセージ">メッセージ</h5>
+
+<p>不明なア...</p><a class="btn btn-primary" href="/~ikageso/blog/2014/09/23/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2014/09/17/01.html">第一回:静的Webサイトの構築</a>
 </h1>
 <p>
   <small class="label label-default">卒研ゼミ</small>
@@ -274,39 +394,16 @@ MacOS側のVagrantfileが置かれているディレクトリは共有となっ�
 <img class="img-responsive" src="//placehold.it/900x200" />
 <hr />
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure...</p><a class="btn btn-primary" href="/~ikageso/blog/2014/01/03/example-article.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2014/01/02/example-article.html">Example Article 2</a>
-</h1>
-<p>
-  <small class="label label-default">example</small>
-  <small class="label label-default">even</small>
-</p>
-<hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Jan  2
-</p>
-<hr />
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure...</p><a class="btn btn-primary" href="/~ikageso/blog/2014/01/02/example-article.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2014/01/01/example-article.html">Example Article 1</a>
-</h1>
-<p>
-  <small class="label label-default">example</small>
-  <small class="label label-default">odd</small>
-</p>
-<hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Jan  1
-</p>
-<hr />
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure...</p><a class="btn btn-primary" href="/~ikageso/blog/2014/01/01/example-article.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
 <hr />
 <div class="well-sm">
   <ul class="pager">
     <li class="previous">
       <a href="/~ikageso/blog/page/4.html">&larr;</a>
     </li>
-    <span class="text-center">Page 5 of 5</span>
+    <span class="text-center">Page 5 of 6</span>
+    <li class="next">
+      <a href="/~ikageso/blog/page/6.html">&rarr;</a>
+    </li>
   </ul>
 </div>
 					 <hr>
@@ -320,6 +417,12 @@ MacOS側のVagrantfileが置かれているディレクトリは共有となっ�
 <!-- Your content -->
 <ul>
  
+   
+  
+   
+  
+   
+  
    
   
    

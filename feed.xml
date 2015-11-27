@@ -5,29 +5,200 @@
   <id>http://ecl.info.kindai.ac.jp/blog</id>
   <link href="http://ecl.info.kindai.ac.jp/blog"/>
   <link href="http://ecl.info.kindai.ac.jp/feed.xml" rel="self"/>
-  <updated>2015-11-21T04:35:00Z</updated>
+  <updated>2015-11-26T21:59:00Z</updated>
   <author>
     <name>ikageso</name>
   </author>
   <entry>
-    <title>PuppyLinixでSSHサーバ構築</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html</id>
-    <published>2015-11-21T04:35:00Z</published>
-    <updated>2015-11-21T13:59:07+09:00</updated>
+    <title>cpコマンドを用いたlinuxバックアップの作成</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/27/make_backup_for_linux.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/27/make_backup_for_linux.html</id>
+    <published>2015-11-26T21:59:00Z</published>
+    <updated>2015-11-27T07:31:52+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
-    <content type="html">&lt;pre&gt;&lt;code&gt;petget install ssh
+    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+
+&lt;h1 id="手法"&gt;手法&lt;/h1&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ファイルタイプを調べる
+
+&lt;ul&gt;
+&lt;li&gt;  &lt;code&gt;parted -l&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;デバイスをマウントする
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mount -t ファイルタイプ /dev/マウント元 /mnt/マウント先&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;ホスト名を調べる
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;cat /mnt/バックアップ元/etc/hostname&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;バックアップ先のディレクトリを作る
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;mkdir /mnt/バックアップ先/ホスト名_backup&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;バックアップする
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;
+cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var&lt;/code&gt;
+&lt;code&gt;/mnt/バックアップ先/ホスト名_backup&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;(apacheの設定ファイルもバックアップしておくと、何に使われていたのか参考になるかも)
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;
+mkdir /mnt/バックアップ先/ホスト名_backup/apache&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;
+cp /mnt/バックアップ元/etc/apache2/site-available/*&lt;/code&gt; &lt;code&gt;/mnt/バックアップ先/ホスト名_backup/apache/&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  <entry>
+    <title>ラーメン店"にぼ次郎"におけるヒューリスティック評価</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/26/ramen_nbzr.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/26/ramen_nbzr.html</id>
+    <published>2015-11-26T12:50:00Z</published>
+    <updated>2015-11-27T12:19:34+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;近畿大学の近くには多くの飲食店が存在します。
+結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
+行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。&lt;/p&gt;
+
+&lt;p&gt;特にラーメン店の数は多く、にぼ次郎も数あるラーメン店の一つとして11月9日よりオープンしたお店です。
+このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列。
+基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えている僕は、
+並ぶ人の行列がなくなった頃に行ってみようと思ってました。&lt;/p&gt;
+
+&lt;p&gt;しかし、光陰矢の如しと言うように時が経つのは早く、気がついたら11月もそろそろ終わり。
+宿泊するために、どこかで夕食を取ろうとしたときに、にぼ次郎の前を通り過ぎました。&lt;/p&gt;
+
+&lt;p&gt;「あ、にぼ次郎行ってない」&lt;/p&gt;
+
+&lt;p&gt;そうです、にぼ次郎に行こうと思っていたけど、今日の今日まですっかり頭の中から抜け落ちていたのでした。
+おそらく、この機会を逃すと忘れっぽい僕のことですから、かなりの確率で今後も行くことは無くなってしまうと思います。&lt;/p&gt;
+
+&lt;p&gt;財布の心配とにぼ次郎への好奇心を天秤にかけた結果、
+僕はてくてくと店の中に入って行きました。&lt;/p&gt;
+
+&lt;h1 id="評価"&gt;評価&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;時間:25分くらい&lt;/li&gt;
+&lt;li&gt;にぼし&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/25/single_user_mode.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/25/single_user_mode.html</id>
+    <published>2015-11-25T11:00:00Z</published>
+    <updated>2015-11-26T13:30:00+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;研究室内で、HDDの再利用が始まりました。
+しかし、このHDDの中身を見ることができないものが多くあり、特にあるubuntuが入ったHDDはmountがエラーでできない、HDDを刺してブートしても、ユーザ名不明かつパスワード不明でバックアップが難しい状況にありました。&lt;/p&gt;
+
+&lt;p&gt;そこで、このubuntuのバックアップを取るための方法として、GRUBのシングルユーザーモードを使用し、rootパスワードを再設定することで中に入れるようにしたいと思います。&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>test</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/22/test.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/22/test.html</id>
+    <published>2015-11-22T13:43:00Z</published>
+    <updated>2015-11-22T22:43:12+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html"></content>
+  </entry>
+  <entry>
+    <title>Middlemanにおけるgitを使用したブログの更新方法</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/blog_update_with_git.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/blog_update_with_git.html</id>
+    <published>2015-11-21T08:13:00Z</published>
+    <updated>2015-11-27T15:26:57+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+
+&lt;p&gt;研究室のゼミで卒研ゼミの内容をブログに書くという課題があります。
+しかし、このブログの更新の際に、研究室の同期や後輩に聞くと、意外とscpで全部上げる人が多いようです。&lt;/p&gt;
+
+&lt;p&gt;せっかくなんで、middlemanで、gitを使ってブログを更新する方法を紹介したいと思います。&lt;/p&gt;
+
+&lt;h1 id="手法"&gt;手法&lt;/h1&gt;
+
+&lt;h2 id="githubの登録"&gt;Githubの登録&lt;/h2&gt;
+
+&lt;p&gt;gitのリポジトリを作成する際に便利な&lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;に登録しましょう。&lt;/p&gt;
+
+&lt;p&gt;GitHubに登録したら、右上の+マークからNew repositoryを選択しましょう。&lt;/p&gt;
+
+&lt;p&gt;次の画面でリポジトリの名前を登録できます。&lt;/p&gt;
+
+&lt;p&gt;Create Repositoryを押せば、作成完了です。&lt;/p&gt;
+
+&lt;h2 id="アップロード"&gt;アップロード&lt;/h2&gt;
+
+&lt;p&gt;gitのリポジトリを作成するため、以下のコマンドを入力しましょう。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git init 
+git remote add origin https://github.com/ユーザ名/リポジトリ名.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;config.rbに対して以下のコードを記述します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;activate :deploy do |deploy|
+   deploy.method = :git
+   deploy.branch = &amp;#39;master&amp;#39;
+end
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;アップします。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;middleman deploy
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="デプロイ"&gt;デプロイ&lt;/h2&gt;
+
+&lt;p&gt;サーバーに入ります。
+公開ディレクトリ内に移動して、
+中が空であることを確認した後、以下のコマンドを入力すると
+ブログを配備することができます。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/ユーザ名/リポジトリ名.git .
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;更新した時は以下のコマンドを入力します。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git pull
 &lt;/code&gt;&lt;/pre&gt;
 </content>
   </entry>
   <entry>
-    <title>第15回</title>
+    <title>第15回:電子メールシステム</title>
     <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/16/01.html"/>
     <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/16/01.html</id>
     <published>2015-01-15T15:00:00Z</published>
-    <updated>2015-02-16T17:03:19+09:00</updated>
+    <updated>2015-11-26T22:49:27+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
@@ -169,325 +340,6 @@ Webサーバに転送する。&lt;/p&gt;
 &lt;p&gt;速達生を必要しないソフトウェアダウンロードサイトに多い。&lt;/p&gt;
 
 &lt;p&gt;例としてRing Serverが挙げられる。&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>middleman</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/15/01.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/15/01.html</id>
-    <published>2015-01-14T15:00:00Z</published>
-    <updated>2015-02-16T17:03:19+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;h3 id="ブロードキャストストリームの見分け方"&gt;ブロードキャストストリームの見分け方&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;no buffer&lt;/li&gt;
-&lt;li&gt;ignored&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ちなみに&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;dribble condition
-は、&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="serial-のデフォルトのカプセル化タイプ"&gt;serial のデフォルトのカプセル化タイプ&lt;/h3&gt;
-
-&lt;p&gt;HDLC&lt;/p&gt;
-
-&lt;h3 id="cdp"&gt;CDP&lt;/h3&gt;
-
-&lt;p&gt;CDP =&amp;gt; レイヤ2&lt;/p&gt;
-
-&lt;h3 id="デフォルトのコンフィギュレーションレジスタ"&gt;デフォルトのコンフィギュレーションレジスタ&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;0x2102
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;0~3 ブート方法
-6   NVRAMの無視
-8   ブレーク信号の無視&lt;/p&gt;
-
-&lt;p&gt;ルータのボーレートのデフォルト値
-    9600
-ROMMONのレジスタ
-    0x2100&lt;/p&gt;
-
-&lt;p&gt;Flash→TFTPサーバ→ROM
-(ROMにはMini IOS)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Ctrl ＋ Shift ＋ 6 + 「X」で中断
-    ー＞　resume 番号　で再開
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>ネットワーク</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/09/01.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/09/01.html</id>
-    <published>2014-12-08T15:00:00Z</published>
-    <updated>2015-02-16T17:03:19+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;h3 id="ブロードキャストストリームの見分け方"&gt;ブロードキャストストリームの見分け方&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;no buffer&lt;/li&gt;
-&lt;li&gt;ignored&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;ちなみに&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;dribble condition
-は、&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="serial-のデフォルトのカプセル化タイプ"&gt;serial のデフォルトのカプセル化タイプ&lt;/h3&gt;
-
-&lt;p&gt;HDLC&lt;/p&gt;
-
-&lt;h3 id="cdp"&gt;CDP&lt;/h3&gt;
-
-&lt;p&gt;CDP =&amp;gt; レイヤ2&lt;/p&gt;
-
-&lt;h3 id="デフォルトのコンフィギュレーションレジスタ"&gt;デフォルトのコンフィギュレーションレジスタ&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;0x2102
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;0~3 ブート方法
-6   NVRAMの無視
-8   ブレーク信号の無視&lt;/p&gt;
-
-&lt;p&gt;ルータのボーレートのデフォルト値
-    9600
-ROMMONのレジスタ
-    0x2100&lt;/p&gt;
-
-&lt;p&gt;Flash→TFTPサーバ→ROM
-(ROMにはMini IOS)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Ctrl ＋ Shift ＋ 6 + 「X」で中断
-    ー＞　resume 番号　で再開
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>サーバ勉強会(3)</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/01.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/01.html</id>
-    <published>2014-12-04T15:00:00Z</published>
-    <updated>2015-02-16T17:03:19+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;h3 id="必要なプログラム"&gt;必要なプログラム&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;rvm &lt;/li&gt;
-&lt;li&gt;ruby&lt;/li&gt;
-&lt;li&gt;gem&lt;/li&gt;
-&lt;li&gt;unicorn&lt;/li&gt;
-&lt;li&gt;rails&lt;/li&gt;
-&lt;li&gt;svn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;#lif &amp;lt;= 基幹サーバ&lt;/p&gt;
-
-&lt;p&gt;apacheが入ってる。&lt;/p&gt;
-
-&lt;h3 id="サーバの配備方法の説明"&gt;サーバの配備方法の説明&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href="&amp;amp;quot;http://ecl.info.kindai.ac.jp/ecl/wiki/Railsアプリのサーバ配備方法&amp;amp;quot;"&gt;Railsアプリのサーバ配備方法&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;rails アプリケーション(４版)も参考にしてね。&lt;/p&gt;
-
-&lt;h3 id="rails-配備方法"&gt;rails 配備方法&lt;/h3&gt;
-
-&lt;h4 id="便利なssh"&gt;便利なssh&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;ssh 名前
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;ホームディレクトリ以下に、&lt;em&gt;.ssh/config&lt;/em&gt;というファイルを作る&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;Host 名前
-  HostName URL(IPアドレス)
-  User ユーザ名
-  Port ポート番号
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id="デメリット"&gt;デメリット&lt;/h5&gt;
-
-&lt;p&gt;本当のコマンドを忘れる&lt;/p&gt;
-
-&lt;p&gt;vzctl enter 3100&lt;/p&gt;
-
-&lt;p&gt;サービスのsvn
-* svn/ecl_services &lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;svn checkout URLパス&lt;/li&gt;
-&lt;li&gt;rvn use version&lt;/li&gt;
-&lt;li&gt;gem list&lt;/li&gt;
-&lt;li&gt;rvm gemset list&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;vim Gemfile&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;gem unicorn&lt;/li&gt;
-&lt;li&gt;→ gem unicorn&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;bundle install&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;rvm &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;1.92    – rails 2
-    -  rails 3
-2.0 - rails 2
-    - rails 3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;rake db:migrate RAILS\_ENV =production
-    → prodction.sqlit3
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id="unicornの設定ファイル"&gt;unicornの設定ファイル&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;cp ../..//wa/wiki/config/unicorn_prodction.rb&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;    Workers プロセスの立ち上げ数(コア数の1.5倍まで)
-    AppliDir    ディレクトリ
-    Port        ポート番号
-    TimeOut タイムアウト秒
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;config.ruをいじる&lt;/li&gt;
-&lt;li&gt;config.server&lt;em&gt;static&lt;/em&gt;assets=true (静的ファイルのコンパイル）&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id="publicしか公開されないので、移す"&gt;publicしか公開されないので、移す&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;rake assets:precompile RAILS_RELATIVE_URL_ROOT=/14/test/attendance
-
-unicorn_rails -c コンフィグファイル -E 環境 –path=URLのパス -D バックグラウンドか否か
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;tail -f log_unicorn.54709.log
-
-    worker=0 readyとなっていればおk
-
-cat temp/pids/unicorn.pid
-    =&amp;gt;プロセス番号
-kill  &amp;#39;cat temp/pids/unicorn.pid&amp;#39;
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="サーバを公開する"&gt;サーバを公開する&lt;/h3&gt;
-
-&lt;p&gt;サーバを出る
-lifが別サーバに応答を飛ばしている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;cd /etc/apache2
-    sites-available     全ての設定ファイル
-    sites-enabled       適用している設定ファイル
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h4 id="シンボリックリンク"&gt;シンボリックリンク&lt;/h4&gt;
-
-&lt;pre&gt;&lt;code&gt;12_wa_wiki =&amp;gt; ../sites-available/14_wa_wiki
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h5 id="apach設定ファイルを作ろう！"&gt;apach設定ファイルを作ろう！&lt;/h5&gt;
-
-&lt;pre&gt;&lt;code&gt;ProxyPass　        パス  飛ばす先のパス
-ProxyPassReverse    パス　   飛ばす先のパス   // リバースプロキシ
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;a2ensite 設定ファイル名 (切り方: a2dissite)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id="エラー検出"&gt;エラー検出&lt;/h4&gt;
-
-&lt;p&gt;apache2ctl -t&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;apachの再起動&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;/etc/init.d apache2 reload
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;(restartはリクエストを返さず、シャットダウン）&lt;/p&gt;
-
-&lt;h4 id="apacheの設定ファイル"&gt;apacheの設定ファイル&lt;/h4&gt;
-
-&lt;p&gt;apache2.conf&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;include で読み込み、展開&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-  </entry>
-  <entry>
-    <title>js勉強会</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/02.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2014/12/05/02.html</id>
-    <published>2014-12-04T15:00:00Z</published>
-    <updated>2015-02-16T17:03:19+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;p&gt;addEvent~とかgetElement~は長い。
-よってシンプルな表記にしたい。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;prototype.js&lt;/li&gt;
-&lt;li&gt;jQuery&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;jQueryは独自のプラグインを使えるので、
-拡張性が高いので現在使われている。&lt;/p&gt;
-
-&lt;h4 id="version"&gt;version&lt;/h4&gt;
-
-&lt;p&gt;1系と2系がある。
-2系はIEの9以前は切り捨てているので、
-今回は1系を使う。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="&amp;amp;quot;http://www.jquerystudy.info/&amp;amp;quot;"&gt;jQuery入門&lt;/a&gt;を参考にしてね。
-ダウンロード
-&lt;a href="&amp;amp;quot;http://jquery.com/download/&amp;amp;quot;"&gt;jQuery&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;compressed:サイズが小さい。見にくい。&lt;/li&gt;
-&lt;li&gt;uncompressed:サイズが大きい。見やすい。(学習用)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;pre&gt;&lt;code&gt;document.getElementById(&amp;quot;ID&amp;quot;).innerHTML = &amp;quot;にゃんにゃん&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;$(&amp;quot;ID&amp;quot;).text(&amp;quot;にゃんにゃん&amp;quot;);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;:r!ls&lt;/p&gt;
-
-&lt;p&gt;:sp
-:edit sample.js&lt;/p&gt;
 </content>
   </entry>
 </feed>

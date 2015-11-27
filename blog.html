@@ -151,7 +151,7 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				<li>
 				<a href="/~ikageso/blog/tags/卒研ゼミ.html">卒研ゼミ</a>
           |  (
-					7
+					6
           | )
 				</li>
        
@@ -183,6 +183,27 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
           | )
 				</li>
        
+				<li>
+				<a href="/~ikageso/blog/tags/blog.html">blog</a>
+          |  (
+					1
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/server.html">server</a>
+          |  (
+					2
+          | )
+				</li>
+       
+				<li>
+				<a href="/~ikageso/blog/tags/food.html">food</a>
+          |  (
+					1
+          | )
+				</li>
+       
     </ul>
   </div>
   <div class="well">
@@ -192,7 +213,7 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
         <li>
           <a href="/~ikageso/blog/2015.html">2015</a>
           |  (
-          3
+          6
           | )
 				</li>
 			 
@@ -209,15 +230,15 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
  <h4>最近更新した記事</h4>
  <ol>
   
-  <li><a href="/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html">PuppyLinixでSSHサーバ構築</a> <span>Nov 21</span></li>
+  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a> <span>Nov 27</span></li>
   
-  <li><a href="/~ikageso/blog/2015/01/16/01.html">第15回</a> <span>Jan 16</span></li>
+  <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
   
-  <li><a href="/~ikageso/blog/2015/01/15/01.html">middleman</a> <span>Jan 15</span></li>
+  <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
   
-  <li><a href="/~ikageso/blog/2014/12/09/01.html">ネットワーク</a> <span>Dec  9</span></li>
+  <li><a href="/~ikageso/blog/2015/11/22/test.html">test</a> <span>Nov 22</span></li>
   
-  <li><a href="/~ikageso/blog/2014/12/05/01.html">サーバ勉強会(3)</a> <span>Dec  5</span></li>
+  <li><a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a> <span>Nov 21</span></li>
   
   </ol>
 </div>
@@ -227,200 +248,135 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				 
 					 <hr>
 					 <h1>
-  <a href="/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html">PuppyLinixでSSHサーバ構築</a>
+  <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a>
 </h1>
 <p>
+  <small class="label label-default">server</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Nov 27
+</p>
+<hr /><h1 id="背景">背景</h1>
+
+<h1 id="手法">手法</h1>
+
+<ol>
+<li>ファイルタイプを調べる
+
+<ul>
+<li>  <code>parted -l</code>
+</li>
+</ul>
+</li>
+<li>デバイスをマウントする
+
+<ul>
+<li><code>mount -t ファイルタイプ /dev/マウント元 /mnt/マウント先</code></li>
+</ul>
+</li>
+<li>ホスト名を調べる
+
+<ul>
+<li><code>cat /mnt/バックアップ元/etc/hostname</code></li>
+</ul>
+</li>
+<li>バックアップ先のディレクトリを作る
+
+<ul>
+<li><code>mkdir /mnt/バックアップ先/ホスト名_backup</code></li>
+</ul>
+</li>
+<li>バックアップする
+
+<ul><li>
+<code>
+cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
+<code>/mnt/バックアップ先/ホスト...</code>
+</li></ul>
+</li>
+</ol><a class="btn btn-primary" href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a>
+</h1>
+<p>
+  <small class="label label-default">food</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Nov 26
+</p>
+<hr />
+<h1 id="背景">背景</h1>
+
+<p>近畿大学の近くには多くの飲食店が存在します。
+結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
+行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。</p>
+
+<p>特にラーメン店の数は多く、にぼ次郎も数あるラーメン店の一つとして11月9日よりオープンしたお店です。
+このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列。
+基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えている僕は、
+並ぶ人の行列が...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a>
+</h1>
+<p>
+  <small class="label label-default">server</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Nov 25
+</p>
+<hr />
+<h1 id="背景">背景</h1>
+
+<p>研究室内で、HDDの再利用が始まりました。
+しかし、このHDDの中身を見ることができないものが多くあり、特にあるubuntuが入ったHDDはmountがエラーでできない、HDDを刺してブートしても、ユーザ名不明かつパスワード不明でバックアップが難しい状況にありました。</p>
+
+<p>そこで、このubuntuのバックアップを取るための方法として、GRUBのシングルユーザーモードを使用し、rootパスワードを再設定することで中に入れるようにしたいと思います。</p>
+<a class="btn btn-primary" href="/~ikageso/blog/2015/11/25/single_user_mode.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2015/11/22/test.html">test</a>
+</h1>
+<p>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Nov 22
+</p>
+<hr />
+<a class="btn btn-primary" href="/~ikageso/blog/2015/11/22/test.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a>
+</h1>
+<p>
+  <small class="label label-default">blog</small>
 </p>
 <hr />
 <p>
   <span class="glyphicon glyphicon-time"></span> Posted on Nov 21
 </p>
-<hr /><pre><code>petget install ssh
-</code></pre>
-<a class="btn btn-primary" href="/~ikageso/blog/2015/11/21/ssh_server_setup_with_puppy_linux.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2015/01/16/01.html">第15回</a>
-</h1>
-<p>
-  <small class="label label-default">分散システム</small>
-</p>
 <hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Jan 16
-</p>
-<hr />
-<h3 id="電子メール">電子メール</h3>
+<h1 id="背景">背景</h1>
 
-<p>RFC822で規定されている。
-以下のヘッダフィールドを定義されている。</p>
+<p>研究室のゼミで卒研ゼミの内容をブログに書くという課題があります。
+しかし、このブログの更新の際に、研究室の同期や後輩に聞くと、意外とscpで全部上げる人が多いようです。</p>
 
-<table>
-<thead><tr>
-<th style="text-align: left">ヘッダ</th>
-<th style="text-align: left">意味</th>
-</tr></thead>
-<tbody>
-<tr>
-<td style="text-align: left">From</td>
-<td style="text-align: left">送信者アドレス</td>
-</tr>
-<tr>
-<td style="text-align: left">To</td>
-<td style="text-align: left">受信者アドレス</td>
-</tr>
-<tr>
-<td style="text-align: left">Date</td>
-<td style="text-align: left">日時</td>
-</tr>
-<tr>
-<td style="text-align: left">Message-id</td>
-<td style="text-align: left">識別子</td>
-</tr>
-</tbody>
-</table><h4 id="送信から受信の流れ">送信から受信の流れ</h4>
+<p>せっかくなんで、middlemanで、gitを使ってブログを更新する方法を紹介したいと思います。</p>
 
-<ul>
-<li>MUA(Mail User Agent)</li>
-<li>MTA(Mail Transfer Agent)</li>
-</ul><h4 id="smtp(simple-mail-transfer-protocol)">SMTP(Simple Mail Transfer Protocol)</h4>
+<h1 id="手法">手法</h1>
 
-<h4 id="pop(post-office-protocol)">POP(Post Office Protocol)</h4>
+<h2 id="githubの登録">Githubの登録</h2>
 
-<h3 id="www(world-wide-web)">WWW(World Wide Web)</h3>
+<p>gitのリポジトリを作成する際に便利な<a href="https://github.com/">GitHub</a>に登録しましょう。</p>
 
-<p>CERNで開...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/01/16/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2015/01/15/01.html">middleman</a>
-</h1>
-<p>
-  <small class="label label-default">卒研ゼミ</small>
-</p>
-<hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Jan 15
-</p>
-<hr /><h3 id="ブロードキャストストリームの見分け方">ブロードキャストストリームの見分け方</h3>
+<p>GitHubに登録したら、右上の+マークからNew repositoryを選択しましょう。</p>
 
-<ul>
-<li>no buffer</li>
-<li>ignored</li>
-</ul><p>ちなみに</p>
-
-<ul>
-<li>dribble condition
-は、</li>
-</ul><h3 id="serial-のデフォルトのカプセル化タイプ">serial のデフォルトのカプセル化タイプ</h3>
-
-<p>HDLC</p>
-
-<h3 id="cdp">CDP</h3>
-
-<p>CDP =&gt; レイヤ2</p>
-
-<h3 id="デフォルトのコンフィギュレーションレジスタ">デフォルトのコンフィギュレーションレジスタ</h3>
-
-<pre><code>0x2102
-</code></pre>
-
-<p>0~3 ブート方法
-6   NVRAMの無視
-8   ブレーク信号の無視</p>
-
-<p>ルータのボーレートのデフォルト値
-    9600
-ROMMONのレジスタ
-    0x2100</p>
-
-<p>Flash→TFTPサーバ→ROM...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/01/15/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2014/12/09/01.html">ネットワーク</a>
-</h1>
-<p>
-  <small class="label label-default">ネットワーク</small>
-</p>
-<hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Dec  9
-</p>
-<hr /><h3 id="ブロードキャストストリームの見分け方">ブロードキャストストリームの見分け方</h3>
-
-<ul>
-<li>no buffer</li>
-<li>ignored</li>
-</ul><p>ちなみに</p>
-
-<ul>
-<li>dribble condition
-は、</li>
-</ul><h3 id="serial-のデフォルトのカプセル化タイプ">serial のデフォルトのカプセル化タイプ</h3>
-
-<p>HDLC</p>
-
-<h3 id="cdp">CDP</h3>
-
-<p>CDP =&gt; レイヤ2</p>
-
-<h3 id="デフォルトのコンフィギュレーションレジスタ">デフォルトのコンフィギュレーションレジスタ</h3>
-
-<pre><code>0x2102
-</code></pre>
-
-<p>0~3 ブート方法
-6   NVRAMの無視
-8   ブレーク信号の無視</p>
-
-<p>ルータのボーレートのデフォルト値
-    9600
-ROMMONのレジスタ
-    0x2100</p>
-
-<p>Flash→TFTPサーバ→ROM...</p><a class="btn btn-primary" href="/~ikageso/blog/2014/12/09/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2014/12/05/01.html">サーバ勉強会(3)</a>
-</h1>
-<p>
-  <small class="label label-default">勉強会</small>
-</p>
-<hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Dec  5
-</p>
-<hr /><h3 id="必要なプログラム">必要なプログラム</h3>
-
-<ul>
-<li>rvm </li>
-<li>ruby</li>
-<li>gem</li>
-<li>unicorn</li>
-<li>rails</li>
-<li>svn</li>
-</ul><p>#lif &lt;= 基幹サーバ</p>
-
-<p>apacheが入ってる。</p>
-
-<h3 id="サーバの配備方法の説明">サーバの配備方法の説明</h3>
-
-<p><a href="&amp;quot;http://ecl.info.kindai.ac.jp/ecl/wiki/Rails%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%B5%E3%83%BC%E3%83%90%E9%85%8D%E5%82%99%E6%96%B9%E6%B3%95&amp;quot;">Railsアプリのサーバ配備方法</a></p>
-
-<p>rails アプリケーション(４版)も参考にしてね。</p>
-
-<h3 id="rails-配備方法">rails 配備方法</h3>
-
-<h4 id="便利なssh">便利なssh</h4>
-
-<pre><code>ssh 名前
-</code></pre>
-
-<p>ホームディレクトリ以下に、<em>.ssh/config</em>というファイルを作る</p>
-
-<pre><code>Host 名前
-  HostName URL(IPアドレス)
-  User ユーザ名
-  Port ポー...</code></pre><a class="btn btn-primary" href="/~ikageso/blog/2014/12/05/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<p>次の画面でリポジト...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
 <hr />
 <div class="well-sm">
   <ul class="pager">
-    <span class="text-center">Page 1 of 5</span>
+    <span class="text-center">Page 1 of 6</span>
     <li class="next">
       <a href="/~ikageso/blog/page/2.html">&rarr;</a>
     </li>
@@ -437,6 +393,12 @@ ROMMONのレジスタ
 <!-- Your content -->
 <ul>
  
+   
+  
+   
+  
+   
+  
    
   
    
