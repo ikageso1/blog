@@ -204,6 +204,13 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
           | )
 				</li>
        
+				<li>
+				<a href="/~ikageso/blog/tags/research.html">research</a>
+          |  (
+					1
+          | )
+				</li>
+       
     </ul>
   </div>
   <div class="well">
@@ -211,9 +218,16 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
     <ol>
        
         <li>
+          <a href="/~ikageso/blog/2016.html">2016</a>
+          |  (
+          1
+          | )
+				</li>
+			 
+        <li>
           <a href="/~ikageso/blog/2015.html">2015</a>
           |  (
-          6
+          7
           | )
 				</li>
 			 
@@ -230,15 +244,15 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
  <h4>最近更新した記事</h4>
  <ol>
   
-  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a> <span>Nov 27</span></li>
+  <li><a href="/~ikageso/blog/2016/02/04/prezi.html">preziにおけるレーザーポインターを用いた画面切り替え方法</a> <span>Feb  4</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a> <span>Dec 11</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いた簡易linuxバックアップの作成</a> <span>Nov 27</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
-  
-  <li><a href="/~ikageso/blog/2015/11/22/test.html">test</a> <span>Nov 22</span></li>
-  
-  <li><a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a> <span>Nov 21</span></li>
   
   </ol>
 </div>
@@ -248,6 +262,54 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				 
 					 <hr>
 					 <h1>
+  <a href="/~ikageso/blog/2014/09/17/01.html">第一回:静的Webサイトの構築</a>
+</h1>
+<p>
+  <small class="label label-default">卒研ゼミ</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Sep 17
+</p>
+<hr /><h4 id="rubyのバージョン確認">rubyのバージョン確認</h4>
+
+<pre>ruby -v</pre>
+
+<h4 id="railsのバージョン確認">railsのバージョン確認</h4>
+
+<pre>rails -v</pre>
+
+<h4 id="ファイル共有">ファイル共有</h4>
+
+<h5 id="ディレクトリによる共有">ディレクトリによる共有</h5>
+
+<p>vagrant側の"/vagrant"ディレクトリと、
+MacOS側のVagrantfileが置かれているディレクトリは共有となっている</p>
+
+<h5 id="scpによる共有">scpによる共有</h5>
+
+<pre>vagrant ssh-config</pre>
+
+<p>上記のコマンドで設定が出力される。
+これをリダイレクトして適当なファイルに保存する。<br>
+送信するときはscpの-Fをファイルを指定して送信。
+</p><pre>scp　-F　コ...</pre><a class="btn btn-primary" href="/~ikageso/blog/2014/09/17/01.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
+  <a href="/~ikageso/blog/2014/01/03/example-article.html">Example Article 3</a>
+</h1>
+<p>
+  <small class="label label-default">example</small>
+  <small class="label label-default">odd</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Jan  3
+</p>
+<hr />
+<img class="img-responsive" src="//placehold.it/900x200" />
+<hr />
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure...</p><a class="btn btn-primary" href="/~ikageso/blog/2014/01/03/example-article.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
   <a href="/~ikageso/blog/2014/01/02/example-article.html">Example Article 2</a>
 </h1>
 <p>
@@ -293,6 +355,8 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 <!-- Your content -->
 <ul>
  
+   
+  
    
   
    

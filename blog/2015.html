@@ -215,6 +215,13 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
           | )
 				</li>
        
+				<li>
+				<a href="/~ikageso/blog/tags/research.html">research</a>
+          |  (
+					1
+          | )
+				</li>
+       
     </ul>
   </div>
   <div class="well">
@@ -222,9 +229,16 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
     <ol>
        
         <li>
+          <a href="/~ikageso/blog/2016.html">2016</a>
+          |  (
+          1
+          | )
+				</li>
+			 
+        <li>
           <a href="/~ikageso/blog/2015.html">2015</a>
           |  (
-          6
+          7
           | )
 				</li>
 			 
@@ -241,15 +255,15 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
  <h4>最近更新した記事</h4>
  <ol>
   
-  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a> <span>Nov 27</span></li>
+  <li><a href="/~ikageso/blog/2016/02/04/prezi.html">preziにおけるレーザーポインターを用いた画面切り替え方法</a> <span>Feb  4</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a> <span>Dec 11</span></li>
+  
+  <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いた簡易linuxバックアップの作成</a> <span>Nov 27</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
-  
-  <li><a href="/~ikageso/blog/2015/11/22/test.html">test</a> <span>Nov 22</span></li>
-  
-  <li><a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a> <span>Nov 21</span></li>
   
   </ol>
 </div>
@@ -270,7 +284,52 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 </p>
 <ul>
   <h2>
-    <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a>
+    <a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a>
+  </h2>
+  <p>
+    <small class="label label-default">research</small>
+  </p>
+  <hr />
+  <p>
+    <span class="glyphicon glyphicon-time"></span> Posted on Dec 11
+  </p>
+  <hr />
+  <h1 id="作業内容">作業内容</h1>
+  
+  <ul>
+  <li>リモートの作業環境整える
+  
+  <ul>
+  <li>調査</li>
+  <li>スタティックにIPを振る</li>
+  <li>画面共有</li>
+  </ul>
+  </li>
+  <li>掃除</li>
+  <li>お茶出し</li>
+  <li>vimでmarkdownハイライト</li>
+  <li>PowerEdgeで速度比較
+  
+  <ul>
+  <li>gtkファイルを読み出す順番=ランダム</li>
+  <li>ディレクトリをreaddirで読む</li>
+  <li>文字列をそーとしないといけなさそう</li>
+  <li>StartController.cppに計測コード実装</li>
+  </ul>
+  </li>
+  </ul><h1 id="詳細内容">詳細内容</h1>
+  
+  <h2 id="リモートの作業環境整える">リモートの作業環境整える</h2>
+  
+  <h3 id="調査">調査</h3>
+  
+  <p>以下のサイトを参考に作業を実施</p>
+  
+  <ul><li>リモートデスクトップ: <a href="http://d.hatena.ne.jp/adragoona/20131011/1381495671">http://d.hatena.ne.jp/adragoona...</a>
+  </li></ul><a class="btn btn-primary" href="/~ikageso/blog/2015/12/11/kenkyu.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <hr />
+  <h2>
+    <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いた簡易linuxバックアップの作成</a>
   </h2>
   <p>
     <small class="label label-default">server</small>
@@ -330,16 +389,15 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
     <span class="glyphicon glyphicon-time"></span> Posted on Nov 26
   </p>
   <hr />
-  <h1 id="背景">背景</h1>
+  <h2 id="背景">背景</h2>
   
   <p>近畿大学の近くには多くの飲食店が存在します。
   結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
   行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。</p>
   
-  <p>特にラーメン店の数は多く、にぼ次郎も数あるラーメン店の一つとして11月9日よりオープンしたお店です。
-  このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列。
-  基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えている僕は、
-  並ぶ人の行列が...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <p>特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
+  このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
+  僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
   <hr />
   <h2>
     <a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a>
@@ -371,34 +429,6 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
   </p>
   <hr />
   <a class="btn btn-primary" href="/~ikageso/blog/2015/11/22/test.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-  <hr />
-  <h2>
-    <a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a>
-  </h2>
-  <p>
-    <small class="label label-default">blog</small>
-  </p>
-  <hr />
-  <p>
-    <span class="glyphicon glyphicon-time"></span> Posted on Nov 21
-  </p>
-  <hr />
-  <h1 id="背景">背景</h1>
-  
-  <p>研究室のゼミで卒研ゼミの内容をブログに書くという課題があります。
-  しかし、このブログの更新の際に、研究室の同期や後輩に聞くと、意外とscpで全部上げる人が多いようです。</p>
-  
-  <p>せっかくなんで、middlemanで、gitを使ってブログを更新する方法を紹介したいと思います。</p>
-  
-  <h1 id="手法">手法</h1>
-  
-  <h2 id="githubの登録">Githubの登録</h2>
-  
-  <p>gitのリポジトリを作成する際に便利な<a href="https://github.com/">GitHub</a>に登録しましょう。</p>
-  
-  <p>GitHubに登録したら、右上の+マークからNew repositoryを選択しましょう。</p>
-  
-  <p>次の画面でリポジト...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
   <hr />
 </ul>
 <p>
@@ -438,7 +468,52 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
 </p>
 <ul>
   <h2>
-    <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いたlinuxバックアップの作成</a>
+    <a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a>
+  </h2>
+  <p>
+    <small class="label label-default">research</small>
+  </p>
+  <hr />
+  <p>
+    <span class="glyphicon glyphicon-time"></span> Posted on Dec 11
+  </p>
+  <hr />
+  <h1 id="作業内容">作業内容</h1>
+  
+  <ul>
+  <li>リモートの作業環境整える
+  
+  <ul>
+  <li>調査</li>
+  <li>スタティックにIPを振る</li>
+  <li>画面共有</li>
+  </ul>
+  </li>
+  <li>掃除</li>
+  <li>お茶出し</li>
+  <li>vimでmarkdownハイライト</li>
+  <li>PowerEdgeで速度比較
+  
+  <ul>
+  <li>gtkファイルを読み出す順番=ランダム</li>
+  <li>ディレクトリをreaddirで読む</li>
+  <li>文字列をそーとしないといけなさそう</li>
+  <li>StartController.cppに計測コード実装</li>
+  </ul>
+  </li>
+  </ul><h1 id="詳細内容">詳細内容</h1>
+  
+  <h2 id="リモートの作業環境整える">リモートの作業環境整える</h2>
+  
+  <h3 id="調査">調査</h3>
+  
+  <p>以下のサイトを参考に作業を実施</p>
+  
+  <ul><li>リモートデスクトップ: <a href="http://d.hatena.ne.jp/adragoona/20131011/1381495671">http://d.hatena.ne.jp/adragoona...</a>
+  </li></ul><a class="btn btn-primary" href="/~ikageso/blog/2015/12/11/kenkyu.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <hr />
+  <h2>
+    <a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いた簡易linuxバックアップの作成</a>
   </h2>
   <p>
     <small class="label label-default">server</small>
@@ -498,16 +573,15 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
     <span class="glyphicon glyphicon-time"></span> Posted on Nov 26
   </p>
   <hr />
-  <h1 id="背景">背景</h1>
+  <h2 id="背景">背景</h2>
   
   <p>近畿大学の近くには多くの飲食店が存在します。
   結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
   行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。</p>
   
-  <p>特にラーメン店の数は多く、にぼ次郎も数あるラーメン店の一つとして11月9日よりオープンしたお店です。
-  このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列。
-  基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えている僕は、
-  並ぶ人の行列が...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+  <p>特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
+  このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
+  僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
   <hr />
   <h2>
     <a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a>
@@ -540,34 +614,6 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
   <hr />
   <a class="btn btn-primary" href="/~ikageso/blog/2015/11/22/test.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
   <hr />
-  <h2>
-    <a href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Middlemanにおけるgitを使用したブログの更新方法</a>
-  </h2>
-  <p>
-    <small class="label label-default">blog</small>
-  </p>
-  <hr />
-  <p>
-    <span class="glyphicon glyphicon-time"></span> Posted on Nov 21
-  </p>
-  <hr />
-  <h1 id="背景">背景</h1>
-  
-  <p>研究室のゼミで卒研ゼミの内容をブログに書くという課題があります。
-  しかし、このブログの更新の際に、研究室の同期や後輩に聞くと、意外とscpで全部上げる人が多いようです。</p>
-  
-  <p>せっかくなんで、middlemanで、gitを使ってブログを更新する方法を紹介したいと思います。</p>
-  
-  <h1 id="手法">手法</h1>
-  
-  <h2 id="githubの登録">Githubの登録</h2>
-  
-  <p>gitのリポジトリを作成する際に便利な<a href="https://github.com/">GitHub</a>に登録しましょう。</p>
-  
-  <p>GitHubに登録したら、右上の+マークからNew repositoryを選択しましょう。</p>
-  
-  <p>次の画面でリポジト...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/21/blog_update_with_git.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-  <hr />
 </ul>
 <p>
   <a href="/~ikageso/blog/2015/page/2.html">Next page</a>
@@ -579,6 +625,8 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
 <!-- Your content -->
 <ul>
  
+   
+  
    
   
    
