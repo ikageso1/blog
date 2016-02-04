@@ -297,6 +297,25 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 <li>チェックボックスをonにする．</li>
 </ol>
 
+<p>今回用いたxmlを以下に示す．
+<code>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;root&gt;
+  &lt;item&gt;
+    &lt;name&gt;Swap Left and Up&lt;/name&gt;
+    &lt;identifier&gt;private.swap_left_and_up&lt;/identifier&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT&lt;/autogen&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::CURSOR_UP&lt;/autogen&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;name&gt;Swap Right and Down&lt;/name&gt;
+    &lt;identifier&gt;private.swap_right_and_down&lt;/identifier&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_DOWN, KeyCode::CURSOR_RIGHT&lt;/autogen&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::CURSOR_DOWN&lt;/autogen&gt;
+  &lt;/item&gt;
+&lt;/root&gt;
+</code></p>
+
 <h2 id="結果・考察">結果・考察</h2>
 
 <p>実験として実際にpreziの画面を切り替えた．
@@ -361,6 +380,25 @@ prezi側の設定を変更することによって画面切り替えが行える
 <li>Change KeyからReload XMLを行う</li>
 <li>チェックボックスをonにする．</li>
 </ol>
+
+<p>今回用いたxmlを以下に示す．
+<code>
+&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;root&gt;
+  &lt;item&gt;
+    &lt;name&gt;Swap Left and Up&lt;/name&gt;
+    &lt;identifier&gt;private.swap_left_and_up&lt;/identifier&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT&lt;/autogen&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::CURSOR_UP&lt;/autogen&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;name&gt;Swap Right and Down&lt;/name&gt;
+    &lt;identifier&gt;private.swap_right_and_down&lt;/identifier&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_DOWN, KeyCode::CURSOR_RIGHT&lt;/autogen&gt;
+    &lt;autogen&gt;__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::CURSOR_DOWN&lt;/autogen&gt;
+  &lt;/item&gt;
+&lt;/root&gt;
+</code></p>
 
 <h2 id="結果・考察">結果・考察</h2>
 

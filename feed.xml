@@ -14,7 +14,7 @@
     <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html"/>
     <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html</id>
     <published>2016-02-04T02:25:00Z</published>
-    <updated>2016-02-04T11:41:06+09:00</updated>
+    <updated>2016-02-04T12:00:23+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
@@ -38,6 +38,25 @@
 &lt;li&gt;Change KeyからReload XMLを行う&lt;/li&gt;
 &lt;li&gt;チェックボックスをonにする．&lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;今回用いたxmlを以下に示す．
+&lt;code&gt;
+&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;
+&amp;lt;root&amp;gt;
+  &amp;lt;item&amp;gt;
+    &amp;lt;name&amp;gt;Swap Left and Up&amp;lt;/name&amp;gt;
+    &amp;lt;identifier&amp;gt;private.swap_left_and_up&amp;lt;/identifier&amp;gt;
+    &amp;lt;autogen&amp;gt;__KeyToKey__ KeyCode::CURSOR_UP, KeyCode::CURSOR_LEFT&amp;lt;/autogen&amp;gt;
+    &amp;lt;autogen&amp;gt;__KeyToKey__ KeyCode::CURSOR_LEFT, KeyCode::CURSOR_UP&amp;lt;/autogen&amp;gt;
+  &amp;lt;/item&amp;gt;
+  &amp;lt;item&amp;gt;
+    &amp;lt;name&amp;gt;Swap Right and Down&amp;lt;/name&amp;gt;
+    &amp;lt;identifier&amp;gt;private.swap_right_and_down&amp;lt;/identifier&amp;gt;
+    &amp;lt;autogen&amp;gt;__KeyToKey__ KeyCode::CURSOR_DOWN, KeyCode::CURSOR_RIGHT&amp;lt;/autogen&amp;gt;
+    &amp;lt;autogen&amp;gt;__KeyToKey__ KeyCode::CURSOR_RIGHT, KeyCode::CURSOR_DOWN&amp;lt;/autogen&amp;gt;
+  &amp;lt;/item&amp;gt;
+&amp;lt;/root&amp;gt;
+&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id="結果・考察"&gt;結果・考察&lt;/h2&gt;
 
