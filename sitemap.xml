@@ -163,6 +163,18 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/12/11/kenkyu.html</loc>
+    <lastmod>2015-12-12</lastmod>
+    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/02/04/prezi.html</loc>
+    <lastmod>2016-02-04</lastmod>
+    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog.html</loc>
     <lastmod>2015-04-16</lastmod>
     <priority>0.9</priority>
@@ -259,9 +271,45 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/tags/research.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/02.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/02/04.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.6</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015.html</loc>
     <lastmod>2015-02-16</lastmod>
     <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/12.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/12/11.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.6</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>

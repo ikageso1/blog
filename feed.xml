@@ -5,16 +5,205 @@
   <id>http://ecl.info.kindai.ac.jp/blog</id>
   <link href="http://ecl.info.kindai.ac.jp/blog"/>
   <link href="http://ecl.info.kindai.ac.jp/feed.xml" rel="self"/>
-  <updated>2015-11-26T21:59:00Z</updated>
+  <updated>2016-02-04T02:25:00Z</updated>
   <author>
     <name>ikageso</name>
   </author>
   <entry>
-    <title>cpコマンドを用いたlinuxバックアップの作成</title>
+    <title>preziにおけるレーザーポインターを用いた画面切り替え方法</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html</id>
+    <published>2016-02-04T02:25:00Z</published>
+    <updated>2016-02-04T11:41:06+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h2 id="序論"&gt;序論&lt;/h2&gt;
+
+&lt;p&gt;ぷれじは左右キーで画面切り替えを行う．
+対してぱわぽは上下キーでスライド切り替えを行うので，
+レーザーポインターもボタンが上下キーとして割り当てられている．
+これによって，通常では2ボタンのレーザーポインターを使用してぷれじの画面切り替えを
+行うことができない．&lt;/p&gt;
+
+&lt;p&gt;本記事ではOSのキー割り当てを変更することにより，
+レーザーポインターを用いてpreziで画面切り替えを行うことを目的とする．&lt;/p&gt;
+
+&lt;h2 id="手法"&gt;手法&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Karabinarをインストールする&lt;/li&gt;
+&lt;li&gt;Misc &amp;amp; Uninstallから Open private.xmlを開く&lt;/li&gt;
+&lt;li&gt;後術するxmlのソースに書き換える&lt;/li&gt;
+&lt;li&gt;Change KeyからReload XMLを行う&lt;/li&gt;
+&lt;li&gt;チェックボックスをonにする．&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="結果・考察"&gt;結果・考察&lt;/h2&gt;
+
+&lt;p&gt;実験として実際にpreziの画面を切り替えた．
+実験環境はMac Book Airを用いた．
+結果として問題なく画面切り替えが行えることを確認した．
+これはKarabinarのEventViewerからも変更されていることが確認できたことから，
+本手法は有効であると言える．&lt;/p&gt;
+
+&lt;h2 id="結論"&gt;結論&lt;/h2&gt;
+
+&lt;p&gt;本記事ではKarabinarによりOSのキー割り当てを変更することにより，
+レーザーポインターを用いてpreziで画面切り替えを行うことができた．&lt;/p&gt;
+
+&lt;p&gt;今後の課題としては
+現在は他のアプリケーションの操作にも影響が出ているので，
+prezi側の設定を変更することによって画面切り替えが行えるようにすることが
+挙げられる．&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>kenkyu</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/12/11/kenkyu.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/12/11/kenkyu.html</id>
+    <published>2015-12-11T00:57:00Z</published>
+    <updated>2015-12-12T14:16:24+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h1 id="作業内容"&gt;作業内容&lt;/h1&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リモートの作業環境整える
+
+&lt;ul&gt;
+&lt;li&gt;調査&lt;/li&gt;
+&lt;li&gt;スタティックにIPを振る&lt;/li&gt;
+&lt;li&gt;画面共有&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;掃除&lt;/li&gt;
+&lt;li&gt;お茶出し&lt;/li&gt;
+&lt;li&gt;vimでmarkdownハイライト&lt;/li&gt;
+&lt;li&gt;PowerEdgeで速度比較
+
+&lt;ul&gt;
+&lt;li&gt;gtkファイルを読み出す順番=ランダム&lt;/li&gt;
+&lt;li&gt;ディレクトリをreaddirで読む&lt;/li&gt;
+&lt;li&gt;文字列をそーとしないといけなさそう&lt;/li&gt;
+&lt;li&gt;StartController.cppに計測コード実装&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id="詳細内容"&gt;詳細内容&lt;/h1&gt;
+
+&lt;h2 id="リモートの作業環境整える"&gt;リモートの作業環境整える&lt;/h2&gt;
+
+&lt;h3 id="調査"&gt;調査&lt;/h3&gt;
+
+&lt;p&gt;以下のサイトを参考に作業を実施&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;リモートデスクトップ: &lt;a href="http://d.hatena.ne.jp/adragoona/20131011/1381495671"&gt;http://d.hatena.ne.jp/adragoona/20131011/1381495671&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id="スタティックにipを振る"&gt;スタティックにIPを振る&lt;/h3&gt;
+
+&lt;p&gt;別途ネットワーク環境を用意して、そこにつなげる方法をとる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;eht0:対内LAN&lt;/li&gt;
+&lt;li&gt;eth1:対外&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;eth1にはDHCPで、eth0にはスタティックでIPを振る。&lt;/p&gt;
+
+&lt;h4 id="設定"&gt;設定&lt;/h4&gt;
+
+&lt;p&gt;/etc/network/interfaces&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auto lo eth0 eth1
+iface lo inet loopback
+
+iface eth0 inet static
+  address 192.168.1.1
+  netmask 255.255.255.0
+
+iface eth1 inet dhcp
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id="networking-restartできない"&gt;networking restartできない&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="http://askubuntu.com/questions/561046/why-is-service-networking-restart-not-working-in-14-04"&gt;http://askubuntu.com/questions/561046/why-is-service-networking-restart-not-working-in-14-04&lt;/a&gt; より引用&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;networking is simply not meant to be restarted or stopped on Ubuntu. The functionality simply isn&amp;#39;t supported (and can&amp;#39;t be supported as Jorge Castro notes). There are a lot of other services which depend on it. The ifup/ifdown command didn&amp;#39;t replace service networking restart, since it has always been available. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;networking restartの代わりにifup/ifdownを使用する必要がある&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ifup eth0
+ifup eth1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="vimでmarkdownハイライト"&gt;vimでmarkdownハイライト&lt;/h2&gt;
+
+&lt;p&gt;編集するときにイライラするので、ハイライトをかける。&lt;/p&gt;
+
+&lt;p&gt;~/.vimrcに以下を追加。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;quot; markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id="画面共有"&gt;画面共有&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://linuxandxx.blog.fc2.com/blog-entry-55.html"&gt;http://linuxandxx.blog.fc2.com/blog-entry-55.html&lt;/a&gt;
+を参照&lt;/p&gt;
+
+&lt;h3 id="エラー"&gt;エラー&lt;/h3&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;接続しようとしているコンピュータで画面共有（”システム環境設定”の&amp;quot;共有”セクションにあります）が有効になっていることを確認してください。
+またネットワーク接続が適切に動作している事も確認してください。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;これはデフォルトで暗号化されている通信のみ許可となっているためである。
+ssh -L コマンドでトンネリングする方法もあるが、ここではLANないで利用という制限から設定を暗号化なしを許可するように変更する。&lt;/p&gt;
+
+&lt;p&gt;設定はdconfEditerの&lt;/p&gt;
+
+&lt;p&gt;org &amp;gt; gnome &amp;gt; desktop &amp;gt; remote-access&lt;/p&gt;
+
+&lt;p&gt;にて行うことができる。&lt;/p&gt;
+
+&lt;p&gt;また、本環境ではCUIからvino-preferencesのコマンドで開いた設定と、
+GUI&amp;quot;上でDesktop Sharing&amp;quot;で開いた設定のパラメータが異なっているという現象に見舞われた。
+GUI上で開いて設定を行うとうまく動作した。&lt;/p&gt;
+
+&lt;p&gt;ネットワーク設定もGUI側の設定が優先されることがあるので、気をつけたい。&lt;/p&gt;
+
+&lt;h3 id="文字列のソート"&gt;文字列のソート&lt;/h3&gt;
+
+&lt;p&gt;Fast Algorithm for Sorting and Searching Strings J. L. Bentley &amp;amp; R. Sedgewick, 1997&lt;/p&gt;
+
+&lt;p&gt;boost::sort
+sort&lt;/p&gt;
+
+&lt;h2 id="時間計測"&gt;時間計測&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;clock() :精度が10msと低い&lt;/li&gt;
+&lt;li&gt;gettimeofday() :システム時刻のため、ntpが動いていたら死ぬ&lt;/li&gt;
+&lt;li&gt;clock_gettime() :ナノ秒単位の分解能。timespec構造体が使いにくい。&lt;/li&gt;
+&lt;li&gt;QueryPerformanceCounter() :Windows系でしか使えない+ XP以前はx
+    &lt;a href="http://d.hatena.ne.jp/shiku_otomiya/20100218/p1"&gt;http://d.hatena.ne.jp/shiku_otomiya/20100218/p1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;std::chrono :C++11て定義。精度は1ms&lt;/li&gt;
+&lt;li&gt;RDTSC: クロック数を求めれる。周波数で割る必要がある。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>cpコマンドを用いた簡易linuxバックアップの作成</title>
     <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/27/make_backup_for_linux.html"/>
     <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/27/make_backup_for_linux.html</id>
     <published>2015-11-26T21:59:00Z</published>
-    <updated>2015-11-27T07:31:52+09:00</updated>
+    <updated>2015-11-27T15:37:31+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
@@ -66,38 +255,69 @@ cp /mnt/バックアップ元/etc/apache2/site-available/*&lt;/code&gt; &lt;code
     <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/26/ramen_nbzr.html"/>
     <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/26/ramen_nbzr.html</id>
     <published>2015-11-26T12:50:00Z</published>
-    <updated>2015-11-27T12:19:34+09:00</updated>
+    <updated>2015-11-27T18:18:15+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
-    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
+    <content type="html">&lt;h2 id="背景"&gt;背景&lt;/h2&gt;
 
 &lt;p&gt;近畿大学の近くには多くの飲食店が存在します。
 結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
 行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。&lt;/p&gt;
 
-&lt;p&gt;特にラーメン店の数は多く、にぼ次郎も数あるラーメン店の一つとして11月9日よりオープンしたお店です。
-このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列。
-基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えている僕は、
-並ぶ人の行列がなくなった頃に行ってみようと思ってました。&lt;/p&gt;
+&lt;p&gt;特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
+このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
+僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので、
+並ぶ人の行列がなくなるタイミングを見計らって行ってみようと思ってました。&lt;/p&gt;
 
 &lt;p&gt;しかし、光陰矢の如しと言うように時が経つのは早く、気がついたら11月もそろそろ終わり。
-宿泊するために、どこかで夕食を取ろうとしたときに、にぼ次郎の前を通り過ぎました。&lt;/p&gt;
+研究室に宿泊するために、どこかで夕食を取ろうとしたときに、にぼ次郎の前を通り過ぎました。&lt;/p&gt;
 
 &lt;p&gt;「あ、にぼ次郎行ってない」&lt;/p&gt;
 
 &lt;p&gt;そうです、にぼ次郎に行こうと思っていたけど、今日の今日まですっかり頭の中から抜け落ちていたのでした。
 おそらく、この機会を逃すと忘れっぽい僕のことですから、かなりの確率で今後も行くことは無くなってしまうと思います。&lt;/p&gt;
 
-&lt;p&gt;財布の心配とにぼ次郎への好奇心を天秤にかけた結果、
-僕はてくてくと店の中に入って行きました。&lt;/p&gt;
+&lt;p&gt;「行くなら、今しかない！」&lt;/p&gt;
 
-&lt;h1 id="評価"&gt;評価&lt;/h1&gt;
+&lt;p&gt;僕は期待を胸ににぼ次郎へと入っていくのでした。&lt;/p&gt;
+
+&lt;h2 id="実験内容"&gt;実験内容&lt;/h2&gt;
+
+&lt;p&gt;実験はにぼ次郎近大前店にて行いました。
+座席は手前から3番目の座席でした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;場所:にぼ次郎近大前店,手前から3番目&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;僕はいつもは夕食は18時に食べるのですが、
+この日は20時まで食べ損ねていたので、お腹の空き具合は80%くらいでした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;お腹の空き具合:80%&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;注文は食券制となっており、コミュ障の僕でも安心して買えます。
+その時のお腹の空き具合と食べれる量を考えた結果、
+注文したのはスタンダードな煮干しラーメンのにぼ次朗(200g)。
+トッピング増し増しまで無料なのですが、
+僕は過去、ラーメン&amp;quot;マッチョ&amp;quot;で痛い目をみた経験があったので、日和って全増しに抑えておきました。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id="結果"&gt;結果&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;時間:25分くらい&lt;/li&gt;
 &lt;li&gt;にぼし&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;h2 id="考察"&gt;考察&lt;/h2&gt;
+
+&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
 </content>
   </entry>
   <entry>
@@ -127,219 +347,5 @@ cp /mnt/バックアップ元/etc/apache2/site-available/*&lt;/code&gt; &lt;code
       <name>ikageso</name>
     </author>
     <content type="html"></content>
-  </entry>
-  <entry>
-    <title>Middlemanにおけるgitを使用したブログの更新方法</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/blog_update_with_git.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/21/blog_update_with_git.html</id>
-    <published>2015-11-21T08:13:00Z</published>
-    <updated>2015-11-27T15:26:57+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
-
-&lt;p&gt;研究室のゼミで卒研ゼミの内容をブログに書くという課題があります。
-しかし、このブログの更新の際に、研究室の同期や後輩に聞くと、意外とscpで全部上げる人が多いようです。&lt;/p&gt;
-
-&lt;p&gt;せっかくなんで、middlemanで、gitを使ってブログを更新する方法を紹介したいと思います。&lt;/p&gt;
-
-&lt;h1 id="手法"&gt;手法&lt;/h1&gt;
-
-&lt;h2 id="githubの登録"&gt;Githubの登録&lt;/h2&gt;
-
-&lt;p&gt;gitのリポジトリを作成する際に便利な&lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;に登録しましょう。&lt;/p&gt;
-
-&lt;p&gt;GitHubに登録したら、右上の+マークからNew repositoryを選択しましょう。&lt;/p&gt;
-
-&lt;p&gt;次の画面でリポジトリの名前を登録できます。&lt;/p&gt;
-
-&lt;p&gt;Create Repositoryを押せば、作成完了です。&lt;/p&gt;
-
-&lt;h2 id="アップロード"&gt;アップロード&lt;/h2&gt;
-
-&lt;p&gt;gitのリポジトリを作成するため、以下のコマンドを入力しましょう。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git init 
-git remote add origin https://github.com/ユーザ名/リポジトリ名.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;config.rbに対して以下のコードを記述します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;activate :deploy do |deploy|
-   deploy.method = :git
-   deploy.branch = &amp;#39;master&amp;#39;
-end
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;アップします。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;middleman deploy
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id="デプロイ"&gt;デプロイ&lt;/h2&gt;
-
-&lt;p&gt;サーバーに入ります。
-公開ディレクトリ内に移動して、
-中が空であることを確認した後、以下のコマンドを入力すると
-ブログを配備することができます。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/ユーザ名/リポジトリ名.git .
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;更新した時は以下のコマンドを入力します。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;git pull
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-  </entry>
-  <entry>
-    <title>第15回:電子メールシステム</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/16/01.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/01/16/01.html</id>
-    <published>2015-01-15T15:00:00Z</published>
-    <updated>2015-11-26T22:49:27+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;h3 id="電子メール"&gt;電子メール&lt;/h3&gt;
-
-&lt;p&gt;RFC822で規定されている。
-以下のヘッダフィールドを定義されている。&lt;/p&gt;
-
-&lt;table&gt;&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="text-align: left"&gt;ヘッダ&lt;/th&gt;
-&lt;th style="text-align: left"&gt;意味&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style="text-align: left"&gt;From&lt;/td&gt;
-&lt;td style="text-align: left"&gt;送信者アドレス&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: left"&gt;To&lt;/td&gt;
-&lt;td style="text-align: left"&gt;受信者アドレス&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: left"&gt;Date&lt;/td&gt;
-&lt;td style="text-align: left"&gt;日時&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style="text-align: left"&gt;Message-id&lt;/td&gt;
-&lt;td style="text-align: left"&gt;識別子&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;&lt;/table&gt;
-
-&lt;h4 id="送信から受信の流れ"&gt;送信から受信の流れ&lt;/h4&gt;
-
-&lt;ul&gt;
-&lt;li&gt;MUA(Mail User Agent)&lt;/li&gt;
-&lt;li&gt;MTA(Mail Transfer Agent)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h4 id="smtp(simple-mail-transfer-protocol)"&gt;SMTP(Simple Mail Transfer Protocol)&lt;/h4&gt;
-
-&lt;h4 id="pop(post-office-protocol)"&gt;POP(Post Office Protocol)&lt;/h4&gt;
-
-&lt;h3 id="www(world-wide-web)"&gt;WWW(World Wide Web)&lt;/h3&gt;
-
-&lt;p&gt;CERNで開発される。
-ブラウザで有名なmozillaは、
-Mosaicの開発者がゴジラ好きである事から命名。&lt;/p&gt;
-
-&lt;h4 id="url(uniform-resource-locator)"&gt;URL(Uniform Resource Locator)&lt;/h4&gt;
-
-&lt;p&gt;スキーム サーバ名 ポート名 ドキュメントのパス名&lt;/p&gt;
-
-&lt;h3 id="webドキュメントの形式"&gt;Webドキュメントの形式&lt;/h3&gt;
-
-&lt;p&gt;Webページの多くはHTMLで記述される。
-HTMLはMarkup Languageの一種であり、
-Markup Languageとは
-文字列の属性情報をあらかじめ定義
-されたコマンドとして文章中に記述していく方式の言語である。&lt;/p&gt;
-
-&lt;p&gt;以下に簡単なhtmlのソースを示す。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;head&amp;gt;
-&amp;lt;title&amp;gt;Homepage&amp;lt;/title&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body&amp;gt;
-&amp;lt;span&amp;gt;分散システムです&amp;lt;/span&amp;gt;
-&amp;lt;/body&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id="wwwシステムの基本構成"&gt;WWWシステムの基本構成&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;ブラウザからドキュメントの取得要求をする。&lt;/li&gt;
-&lt;li&gt;ローカルファイルからドキュメントを取得する。&lt;/li&gt;
-&lt;li&gt;応答する。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;この動作をするプロトコルが&lt;strong&gt;HTTP&lt;/strong&gt;である。&lt;/p&gt;
-
-&lt;h4 id="http(hypertext-transfer-protocol)"&gt;HTTP(Hypertext Transfer Protocol)&lt;/h4&gt;
-
-&lt;p&gt;クライアントとサーバの間の通信はHTTPに基づいて実行される。&lt;/p&gt;
-
-&lt;p&gt;当初のWebシステムは静的なドキュメントを表示するのみだった。
-しかしながら、今日ではCGI(Common Gateway Interface)
-を使用して入力を受理し、検索結果などの
-動的なドキュメントを表示するようになっている。&lt;/p&gt;
-
-&lt;p&gt;以下が簡単なCGIの動作手順である。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;ブラウザで要求内容をCGIフォームにパラメータ入力する。&lt;/li&gt;
-&lt;li&gt;Webサーバが要求内容の解析行う。&lt;/li&gt;
-&lt;li&gt;CGIアプリが内容をアプリケーションで処理する。&lt;/li&gt;
-&lt;li&gt;Webドキュメントが生成される。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h4 id="wwwにおけるフォールトトレランス、負荷分散"&gt;WWWにおけるフォールトトレランス、負荷分散&lt;/h4&gt;
-
-&lt;p&gt;WWWシステムのフォールトトレランス、負荷分散などは
-* クライアント側のキャッシュ
-* サーバ側のレプリケーション
-により行われている。&lt;/p&gt;
-
-&lt;p&gt;HTTPは直接的に耐故障性や負荷分散性能を
-高められるようには構成されていない。&lt;/p&gt;
-
-&lt;p&gt;キャッシュとは過去に使ったデータを記憶しておいて、
-更新が無いときにはそのまま流用する機能である。&lt;/p&gt;
-
-&lt;p&gt;WWWのクライアント側のキャッシュとして、&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ブラウザでのキャッシュ&lt;/li&gt;
-&lt;li&gt;Webプロキシでのキャッシュ
-の二種類が存在する。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;一貫性プロトコルにより、一貫性を確認。
-変更が有るときは再読み込みをしない。
-もしくは、一定時間以上古い際読み込みはしない。&lt;/p&gt;
-
-&lt;h3 id="サーバプリケーション"&gt;サーバプリケーション&lt;/h3&gt;
-
-&lt;h3 id="webクラスタ"&gt;Webクラスタ&lt;/h3&gt;
-
-&lt;p&gt;HTTP要求は仮想アドレス(Webスイッチ)に送られ、
-Webスイッチが負荷状況を考慮して適当な
-Webサーバに転送する。&lt;/p&gt;
-
-&lt;p&gt;例えばラウンドロビンアルゴリズムなどが使用される。&lt;/p&gt;
-
-&lt;p&gt;Webスイッチがボトルネックにならないように注意する必要がある。&lt;/p&gt;
-
-&lt;h3 id="ミラーリング"&gt;ミラーリング&lt;/h3&gt;
-
-&lt;p&gt;速達生を必要しないソフトウェアダウンロードサイトに多い。&lt;/p&gt;
-
-&lt;p&gt;例としてRing Serverが挙げられる。&lt;/p&gt;
-</content>
   </entry>
 </feed>
