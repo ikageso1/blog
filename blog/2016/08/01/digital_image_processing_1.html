@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+		<!-- setting tex style-->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
     </script>
@@ -12,8 +13,8 @@
     <!-- Always force latest IE rendering engine or request Chrome Frame -->
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width">   
-    <!-- Use title if it's in the page YAML frontmatter -->
-    <title>ラーメン店"にぼ次郎"におけるヒューリスティック評価</title>
+		<!-- Use title if it's in the page YAML frontmatter -->
+    <title>画像情報処理まとめ</title>
     <link href="/~ikageso/css/jquery.sidr.light.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="/~ikageso/css/blog.css" media="screen" rel="stylesheet" type="text/css" />
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->   
@@ -26,7 +27,7 @@
     <script src="/stylesheets/bootstrap/js/bootstrap.min.js"></script>
  </head> 
 
-<body class="blog blog_2015 blog_2015_11 blog_2015_11_26 blog_2015_11_26_ramen_nbzr">
+<body class="blog blog_2016 blog_2016_08 blog_2016_08_01 blog_2016_08_01_digital_image_processing_1">
 	<!-- グロナビ -->
 <nav class="navbar-inverse  navbar-fixed-top" role="navigation">
 <div class="container-fluid">
@@ -209,14 +210,14 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				</li>
        
 				<li>
-				<a href="/~ikageso/blog/tags/food.html">food</a>
+				<a href="/~ikageso/blog/tags/research.html">research</a>
           |  (
 					1
           | )
 				</li>
        
 				<li>
-				<a href="/~ikageso/blog/tags/research.html">research</a>
+				<a href="/~ikageso/blog/tags/画像処理.html">画像処理</a>
           |  (
 					1
           | )
@@ -231,14 +232,14 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
         <li>
           <a href="/~ikageso/blog/2016.html">2016</a>
           |  (
-          1
+          2
           | )
 				</li>
 			 
         <li>
           <a href="/~ikageso/blog/2015.html">2015</a>
           |  (
-          7
+          6
           | )
 				</li>
 			 
@@ -255,13 +256,13 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
  <h4>最近更新した記事</h4>
  <ol>
   
+  <li><a href="/~ikageso/blog/2016/08/01/digital_image_processing_1.html">画像情報処理まとめ</a> <span>Aug  1</span></li>
+  
   <li><a href="/~ikageso/blog/2016/02/04/prezi.html">preziにおけるレーザーポインターを用いた画面切り替え方法</a> <span>Feb  4</span></li>
   
-  <li><a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a> <span>Dec 11</span></li>
+  <li><a href="/~ikageso/blog/2015/12/11/kenkyu.html">PowerEdgeの設定+時間計測</a> <span>Dec 11</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いた簡易linuxバックアップの作成</a> <span>Nov 27</span></li>
-  
-  <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
   
@@ -271,70 +272,75 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 
 			 <div class="col-lg-9 col-md-9">
 				 
-						<h1> <span class="title">ラーメン店"にぼ次郎"におけるヒューリスティック評価 </span> </h1>
+						<h1> <span class="title">画像情報処理まとめ </span> </h1>
 						<p>
-						<small class="label label-default">food</small>
+						<small class="label label-default">画像処理</small>
 						</p>
 						<hr>
-					 <h2 id="背景">背景</h2>
+					 <h1 id="背景">背景</h1>
 
-<p>近畿大学の近くには多くの飲食店が存在します。
-結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
-行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。</p>
+<p>画像情報処理がテストなので、
+まとめます。</p>
 
-<p>特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
-このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
-僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので、
-並ぶ人の行列がなくなるタイミングを見計らって行ってみようと思ってました。</p>
+<h1 id="エッジ検出オペレータ">エッジ検出オペレータ</h1>
 
-<p>しかし、光陰矢の如しと言うように時が経つのは早く、気がついたら11月もそろそろ終わり。
-研究室に宿泊するために、どこかで夕食を取ろうとしたときに、にぼ次郎の前を通り過ぎました。</p>
+<p>ラプラシアンとかが狙われやすいかも。</p>
 
-<p>「あ、にぼ次郎行ってない」</p>
-
-<p>そうです、にぼ次郎に行こうと思っていたけど、今日の今日まですっかり頭の中から抜け落ちていたのでした。
-おそらく、この機会を逃すと忘れっぽい僕のことですから、かなりの確率で今後も行くことは無くなってしまうと思います。</p>
-
-<p>「行くなら、今しかない！」</p>
-
-<p>僕は期待を胸ににぼ次郎へと入っていくのでした。</p>
-
-<h2 id="実験内容">実験内容</h2>
-
-<p>実験はにぼ次郎近大前店にて行いました。
-座席は手前から3番目の座席でした。</p>
+<h2 id="ラプラシアン">ラプラシアン</h2>
 
 <ul>
-<li>場所:にぼ次郎近大前店,手前から3番目</li>
+<li>ラプラシアンとは二次微分である</li>
+<li>直感的には画素を微分ものの差分を取ればよい</li>
+<li>縦と横があるので、ラプラシアンフィルタはそれを足したものになる。</li>
 </ul>
 
-<p>僕はいつもは夕食は18時に食べるのですが、
-この日は20時まで食べ損ねていたので、お腹の空き具合は80%くらいでした。</p>
+<p>\(
+  \frac{{\partial}^2}{\partial x^2}f(x,y) +  \frac{{\partial}^2}{\partial y^2}f(x,y) 
+  \tag{1}
+\)</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center"></th>
+<th style="text-align: center"></th>
+<th style="text-align: center"></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">0</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">0</td>
+</tr>
+<tr>
+<td style="text-align: center">1</td>
+<td style="text-align: center">-4</td>
+<td style="text-align: center">1</td>
+</tr>
+<tr>
+<td style="text-align: center">0</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">0</td>
+</tr>
+</tbody></table>
 
 <ul>
-<li>お腹の空き具合:80%</li>
-</ul>
-
-<p>注文は食券制となっており、コミュ障の僕でも安心して買えます。
-その時のお腹の空き具合と食べれる量を考えた結果、
-注文したのはスタンダードな煮干しラーメンのにぼ次朗(200g)。
-トッピング増し増しまで無料なのですが、
-僕は過去、ラーメン&quot;マッチョ&quot;で痛い目をみた経験があったので、日和って全増しに抑えておきました。</p>
+<li>方向に依存しないエッジが得られる</li>
+<li>プラスとマイナスが対になって現れる
 
 <ul>
-<li></li>
-</ul>
-
-<h2 id="結果">結果</h2>
+<li>ゼロ交差</li>
+</ul></li>
+<li>微分を繰り返すので、ノイズを強調してしまう
 
 <ul>
-<li>時間:25分くらい</li>
-<li>にぼし</li>
+<li>前もってガウシアンフィルタを適用</li>
+</ul></li>
 </ul>
 
-<h2 id="考察">考察</h2>
-
-<h2 id="まとめ">まとめ</h2>
+<p>\(
+  h_{log} (x,y) = \frac{x^2 + y^2 -2{\sigma}^2}{2\pi {\sigma}^6} exp(- \frac{x^2 + y^2}{2{\sigma}^2})
+  \tag{2}
+\)</p>
 
 					 <hr>
 
@@ -357,70 +363,75 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 		</div>
 	<!--	
 
-  <h1>food</h1>
+  <h1>画像処理</h1>
   <div class="main">
     <div class="day">
       <h2> <span class="title"> </span> </h2>
       <div class="body">
-        <h2 id="背景">背景</h2>
+        <h1 id="背景">背景</h1>
 
-<p>近畿大学の近くには多くの飲食店が存在します。
-結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
-行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。</p>
+<p>画像情報処理がテストなので、
+まとめます。</p>
 
-<p>特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
-このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
-僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので、
-並ぶ人の行列がなくなるタイミングを見計らって行ってみようと思ってました。</p>
+<h1 id="エッジ検出オペレータ">エッジ検出オペレータ</h1>
 
-<p>しかし、光陰矢の如しと言うように時が経つのは早く、気がついたら11月もそろそろ終わり。
-研究室に宿泊するために、どこかで夕食を取ろうとしたときに、にぼ次郎の前を通り過ぎました。</p>
+<p>ラプラシアンとかが狙われやすいかも。</p>
 
-<p>「あ、にぼ次郎行ってない」</p>
-
-<p>そうです、にぼ次郎に行こうと思っていたけど、今日の今日まですっかり頭の中から抜け落ちていたのでした。
-おそらく、この機会を逃すと忘れっぽい僕のことですから、かなりの確率で今後も行くことは無くなってしまうと思います。</p>
-
-<p>「行くなら、今しかない！」</p>
-
-<p>僕は期待を胸ににぼ次郎へと入っていくのでした。</p>
-
-<h2 id="実験内容">実験内容</h2>
-
-<p>実験はにぼ次郎近大前店にて行いました。
-座席は手前から3番目の座席でした。</p>
+<h2 id="ラプラシアン">ラプラシアン</h2>
 
 <ul>
-<li>場所:にぼ次郎近大前店,手前から3番目</li>
+<li>ラプラシアンとは二次微分である</li>
+<li>直感的には画素を微分ものの差分を取ればよい</li>
+<li>縦と横があるので、ラプラシアンフィルタはそれを足したものになる。</li>
 </ul>
 
-<p>僕はいつもは夕食は18時に食べるのですが、
-この日は20時まで食べ損ねていたので、お腹の空き具合は80%くらいでした。</p>
+<p>\(
+  \frac{{\partial}^2}{\partial x^2}f(x,y) +  \frac{{\partial}^2}{\partial y^2}f(x,y) 
+  \tag{1}
+\)</p>
+
+<table><thead>
+<tr>
+<th style="text-align: center"></th>
+<th style="text-align: center"></th>
+<th style="text-align: center"></th>
+</tr>
+</thead><tbody>
+<tr>
+<td style="text-align: center">0</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">0</td>
+</tr>
+<tr>
+<td style="text-align: center">1</td>
+<td style="text-align: center">-4</td>
+<td style="text-align: center">1</td>
+</tr>
+<tr>
+<td style="text-align: center">0</td>
+<td style="text-align: center">1</td>
+<td style="text-align: center">0</td>
+</tr>
+</tbody></table>
 
 <ul>
-<li>お腹の空き具合:80%</li>
-</ul>
-
-<p>注文は食券制となっており、コミュ障の僕でも安心して買えます。
-その時のお腹の空き具合と食べれる量を考えた結果、
-注文したのはスタンダードな煮干しラーメンのにぼ次朗(200g)。
-トッピング増し増しまで無料なのですが、
-僕は過去、ラーメン&quot;マッチョ&quot;で痛い目をみた経験があったので、日和って全増しに抑えておきました。</p>
+<li>方向に依存しないエッジが得られる</li>
+<li>プラスとマイナスが対になって現れる
 
 <ul>
-<li></li>
-</ul>
-
-<h2 id="結果">結果</h2>
+<li>ゼロ交差</li>
+</ul></li>
+<li>微分を繰り返すので、ノイズを強調してしまう
 
 <ul>
-<li>時間:25分くらい</li>
-<li>にぼし</li>
+<li>前もってガウシアンフィルタを適用</li>
+</ul></li>
 </ul>
 
-<h2 id="考察">考察</h2>
-
-<h2 id="まとめ">まとめ</h2>
+<p>\(
+  h_{log} (x,y) = \frac{x^2 + y^2 -2{\sigma}^2}{2\pi {\sigma}^6} exp(- \frac{x^2 + y^2}{2{\sigma}^2})
+  \tag{2}
+\)</p>
 
       </div>
 
@@ -450,11 +461,11 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
    
   
    
-    
-     <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a></li>
-    
-   
   
+   
+    
+     <li><a href="/~ikageso/blog/2016/08/01/digital_image_processing_1.html">画像情報処理まとめ</a></li>
+    
    
   
 </ul>

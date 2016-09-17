@@ -13,7 +13,6 @@
 		<script src="/~ikageso/js/bootstrap.min.js" type="text/javascript"></script>
     <link href="/~ikageso/css/jquery.sidr.light.css" media="screen" rel="stylesheet" type="text/css" />
     <script src="/stylesheets/bootstrap/js/bootstrap.min.js"></script>
-
 		</head>
  <body>
 	 <!-- グロナビ -->
@@ -198,14 +197,14 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				</li>
        
 				<li>
-				<a href="/~ikageso/blog/tags/food.html">food</a>
+				<a href="/~ikageso/blog/tags/research.html">research</a>
           |  (
 					1
           | )
 				</li>
        
 				<li>
-				<a href="/~ikageso/blog/tags/research.html">research</a>
+				<a href="/~ikageso/blog/tags/画像処理.html">画像処理</a>
           |  (
 					1
           | )
@@ -220,14 +219,14 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
         <li>
           <a href="/~ikageso/blog/2016.html">2016</a>
           |  (
-          1
+          2
           | )
 				</li>
 			 
         <li>
           <a href="/~ikageso/blog/2015.html">2015</a>
           |  (
-          7
+          6
           | )
 				</li>
 			 
@@ -244,13 +243,13 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
  <h4>最近更新した記事</h4>
  <ol>
   
+  <li><a href="/~ikageso/blog/2016/08/01/digital_image_processing_1.html">画像情報処理まとめ</a> <span>Aug  1</span></li>
+  
   <li><a href="/~ikageso/blog/2016/02/04/prezi.html">preziにおけるレーザーポインターを用いた画面切り替え方法</a> <span>Feb  4</span></li>
   
-  <li><a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a> <span>Dec 11</span></li>
+  <li><a href="/~ikageso/blog/2015/12/11/kenkyu.html">PowerEdgeの設定+時間計測</a> <span>Dec 11</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">cpコマンドを用いた簡易linuxバックアップの作成</a> <span>Nov 27</span></li>
-  
-  <li><a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a> <span>Nov 26</span></li>
   
   <li><a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a> <span>Nov 25</span></li>
   
@@ -262,6 +261,48 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
 				 
 					 <hr>
 					 <h1>
+  <a href="/~ikageso/blog/2016/08/01/digital_image_processing_1.html">画像情報処理まとめ</a>
+</h1>
+<p>
+  <small class="label label-default">画像処理</small>
+</p>
+<hr />
+<p>
+  <span class="glyphicon glyphicon-time"></span> Posted on Aug  1
+</p>
+<hr />
+<h1 id="背景">背景</h1>
+
+<p>画像情報処理がテストなので、
+まとめます。</p>
+
+<h1 id="エッジ検出オペレータ">エッジ検出オペレータ</h1>
+
+<p>ラプラシアンとかが狙われやすいかも。</p>
+
+<h2 id="ラプラシアン">ラプラシアン</h2>
+
+<ul>
+<li>ラプラシアンとは二次微分である</li>
+<li>直感的には画素を微分ものの差分を取ればよい</li>
+<li>縦と横があるので、ラプラシアンフィルタはそれを足したものになる。</li>
+</ul><p>\(
+  \frac{{\partial}^2}{\partial x^2}f(x,y) +  \frac{{\partial}^2}{\partial y^2}f(x,y) 
+  \tag{1}
+\)</p>
+
+<table>
+<thead><tr>
+<th style="text-align: center"></th>
+<th style="text-align: center"></th>
+<th style="text-align: center"></th>
+</tr></thead>
+<tbody><tr>
+<td style="text-align: center">0</td>
+<td style="text-align: center">1</td>
+</tr></tbody>
+</table><a class="btn btn-primary" href="/~ikageso/blog/2016/08/01/digital_image_processing_1.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
+<hr /><h1>
   <a href="/~ikageso/blog/2016/02/04/prezi.html">preziにおけるレーザーポインターを用いた画面切り替え方法</a>
 </h1>
 <p>
@@ -271,25 +312,20 @@ data-target : 複数navbarを作成する場合、ボタンとナビを紐づけ
   <span class="glyphicon glyphicon-time"></span> Posted on Feb  4
 </p>
 <hr />
-<h2 id="序論">序論</h2>
+<h1 id="序論">序論</h1>
 
-<p>ぷれじは左右キーで画面切り替えを行う．
-対してぱわぽは上下キーでスライド切り替えを行うので，
-レーザーポインターもボタンが上下キーとして割り当てられている．
-これによって，通常では2ボタンのレーザーポインターを使用してぷれじの画面切り替えを
-行うことができない．</p>
+<p>ぷれじは左右キーで画面切り替えを行う． 対してぱわぽは上下キーでスライド切り替えを行うので， レーザーポインターもボタンが上下キーとして割り当てられている． これによって，通常では2ボタンのレーザーポインターを使用してぷれじの画面切り替えを 行うことができない．</p>
 
-<p>本記事ではOSのキー割り当てを変更することにより，
-レーザーポインターを用いてpreziで画面切り替えを行うことを目的とする．</p>
+<p>本記事ではOSのキー割り当てを変更することにより， レーザーポインターを用いてpreziで画面切り替えを行うことを目的とする．</p>
 
-<h2 id="手法">手法</h2>
+<h1 id="手法">手法</h1>
 
 <ol>
 <li>Karabinarをインストールする</li>
 <li>Misc &amp; Uninstallから Open...</li>
 </ol><a class="btn btn-primary" href="/~ikageso/blog/2016/02/04/prezi.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
 <hr /><h1>
-  <a href="/~ikageso/blog/2015/12/11/kenkyu.html">kenkyu</a>
+  <a href="/~ikageso/blog/2015/12/11/kenkyu.html">PowerEdgeの設定+時間計測</a>
 </h1>
 <p>
   <small class="label label-default">research</small>
@@ -381,26 +417,6 @@ cp -r /mnt/バックアップ元/home /mnt/バックアップ元/var</code>
 </li></ul>
 </li>
 </ol><a class="btn btn-primary" href="/~ikageso/blog/2015/11/27/make_backup_for_linux.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
-<hr /><h1>
-  <a href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">ラーメン店"にぼ次郎"におけるヒューリスティック評価</a>
-</h1>
-<p>
-  <small class="label label-default">food</small>
-</p>
-<hr />
-<p>
-  <span class="glyphicon glyphicon-time"></span> Posted on Nov 26
-</p>
-<hr />
-<h2 id="背景">背景</h2>
-
-<p>近畿大学の近くには多くの飲食店が存在します。
-結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
-行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。</p>
-
-<p>特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
-このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
-僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので...</p><a class="btn btn-primary" href="/~ikageso/blog/2015/11/26/ramen_nbzr.html">Read More<span class="glyphicon glyphicon-chevron-right"></span></a>
 <hr /><h1>
   <a href="/~ikageso/blog/2015/11/25/single_user_mode.html">Ubuntuにおけるシングルユーザモードを利用したrootパスワード変更方法</a>
 </h1>

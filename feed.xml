@@ -5,31 +5,101 @@
   <id>http://ecl.info.kindai.ac.jp/blog</id>
   <link href="http://ecl.info.kindai.ac.jp/blog"/>
   <link href="http://ecl.info.kindai.ac.jp/feed.xml" rel="self"/>
-  <updated>2016-02-04T02:25:00Z</updated>
+  <updated>2016-07-31T17:19:00Z</updated>
   <author>
     <name>ikageso</name>
   </author>
   <entry>
-    <title>preziにおけるレーザーポインターを用いた画面切り替え方法</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html</id>
-    <published>2016-02-04T02:25:00Z</published>
-    <updated>2016-02-04T12:02:20+09:00</updated>
+    <title>画像情報処理まとめ</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/08/01/digital_image_processing_1.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/08/01/digital_image_processing_1.html</id>
+    <published>2016-07-31T17:19:00Z</published>
+    <updated>2016-08-01T03:09:10+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
-    <content type="html">&lt;h2 id="序論"&gt;序論&lt;/h2&gt;
+    <content type="html">&lt;h1 id="背景"&gt;背景&lt;/h1&gt;
 
-&lt;p&gt;ぷれじは左右キーで画面切り替えを行う．
-対してぱわぽは上下キーでスライド切り替えを行うので，
-レーザーポインターもボタンが上下キーとして割り当てられている．
-これによって，通常では2ボタンのレーザーポインターを使用してぷれじの画面切り替えを
-行うことができない．&lt;/p&gt;
+&lt;p&gt;画像情報処理がテストなので、
+まとめます。&lt;/p&gt;
 
-&lt;p&gt;本記事ではOSのキー割り当てを変更することにより，
-レーザーポインターを用いてpreziで画面切り替えを行うことを目的とする．&lt;/p&gt;
+&lt;h1 id="エッジ検出オペレータ"&gt;エッジ検出オペレータ&lt;/h1&gt;
 
-&lt;h2 id="手法"&gt;手法&lt;/h2&gt;
+&lt;p&gt;ラプラシアンとかが狙われやすいかも。&lt;/p&gt;
+
+&lt;h2 id="ラプラシアン"&gt;ラプラシアン&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ラプラシアンとは二次微分である&lt;/li&gt;
+&lt;li&gt;直感的には画素を微分ものの差分を取ればよい&lt;/li&gt;
+&lt;li&gt;縦と横があるので、ラプラシアンフィルタはそれを足したものになる。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;\(
+  \frac{{\partial}^2}{\partial x^2}f(x,y) +  \frac{{\partial}^2}{\partial y^2}f(x,y) 
+  \tag{1}
+\)&lt;/p&gt;
+
+&lt;table&gt;&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="text-align: center"&gt;&lt;/th&gt;
+&lt;th style="text-align: center"&gt;&lt;/th&gt;
+&lt;th style="text-align: center"&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;1&lt;/td&gt;
+&lt;td style="text-align: center"&gt;-4&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;td style="text-align: center"&gt;1&lt;/td&gt;
+&lt;td style="text-align: center"&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;ul&gt;
+&lt;li&gt;方向に依存しないエッジが得られる&lt;/li&gt;
+&lt;li&gt;プラスとマイナスが対になって現れる
+
+&lt;ul&gt;
+&lt;li&gt;ゼロ交差&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;微分を繰り返すので、ノイズを強調してしまう
+
+&lt;ul&gt;
+&lt;li&gt;前もってガウシアンフィルタを適用&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;\(
+  h_{log} (x,y) = \frac{x^2 + y^2 -2{\sigma}^2}{2\pi {\sigma}^6} exp(- \frac{x^2 + y^2}{2{\sigma}^2})
+  \tag{2}
+\)&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>preziにおけるレーザーポインターを用いた画面切り替え方法</title>
+    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html"/>
+    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2016/02/04/prezi.html</id>
+    <published>2016-02-03T17:19:00Z</published>
+    <updated>2016-09-17T16:00:20+09:00</updated>
+    <author>
+      <name>ikageso</name>
+    </author>
+    <content type="html">&lt;h1 id="序論"&gt;序論&lt;/h1&gt;
+
+&lt;p&gt;ぷれじは左右キーで画面切り替えを行う． 対してぱわぽは上下キーでスライド切り替えを行うので， レーザーポインターもボタンが上下キーとして割り当てられている． これによって，通常では2ボタンのレーザーポインターを使用してぷれじの画面切り替えを 行うことができない．&lt;/p&gt;
+
+&lt;p&gt;本記事ではOSのキー割り当てを変更することにより， レーザーポインターを用いてpreziで画面切り替えを行うことを目的とする．&lt;/p&gt;
+
+&lt;h1 id="手法"&gt;手法&lt;/h1&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Karabinarをインストールする&lt;/li&gt;
@@ -41,7 +111,7 @@
 
 &lt;p&gt;今回用いたxmlを以下に示す．&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;
+&lt;pre&gt;&lt;code class="xml"&gt;&amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt;
 &amp;lt;root&amp;gt;
   &amp;lt;item&amp;gt;
     &amp;lt;name&amp;gt;Swap Left and Up&amp;lt;/name&amp;gt;
@@ -58,31 +128,23 @@
 &amp;lt;/root&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id="結果・考察"&gt;結果・考察&lt;/h2&gt;
+&lt;h1 id="結果・考察"&gt;結果・考察&lt;/h1&gt;
 
-&lt;p&gt;実験として実際にpreziの画面を切り替えた．
-実験環境はMac Book Airを用いた．
-結果として問題なく画面切り替えが行えることを確認した．
-これはKarabinarのEventViewerからも変更されていることが確認できたことから，
-本手法は有効であると言える．&lt;/p&gt;
+&lt;p&gt;実験として実際にpreziの画面を切り替えた． 実験環境はMac Book Airを用いた． 結果として問題なく画面切り替えが行えることを確認した． これはKarabinarのEventViewerからも変更されていることが確認できたことから， 本手法は有効であると言える．&lt;/p&gt;
 
-&lt;h2 id="結論"&gt;結論&lt;/h2&gt;
+&lt;h1 id="結論"&gt;結論&lt;/h1&gt;
 
-&lt;p&gt;本記事ではKarabinarによりOSのキー割り当てを変更することにより，
-レーザーポインターを用いてpreziで画面切り替えを行うことができた．&lt;/p&gt;
+&lt;p&gt;本記事ではKarabinarによりOSのキー割り当てを変更することにより， レーザーポインターを用いてpreziで画面切り替えを行うことができた．&lt;/p&gt;
 
-&lt;p&gt;今後の課題としては
-現在は他のアプリケーションの操作にも影響が出ているので，
-prezi側の設定を変更することによって画面切り替えが行えるようにすることが
-挙げられる．&lt;/p&gt;
+&lt;p&gt;今後の課題としては 現在は他のアプリケーションの操作にも影響が出ているので， prezi側の設定を変更することによって画面切り替えが行えるようにすることが 挙げられる．&lt;/p&gt;
 </content>
   </entry>
   <entry>
-    <title>kenkyu</title>
+    <title>PowerEdgeの設定+時間計測</title>
     <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/12/11/kenkyu.html"/>
     <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/12/11/kenkyu.html</id>
     <published>2015-12-11T00:57:00Z</published>
-    <updated>2015-12-12T14:16:24+09:00</updated>
+    <updated>2016-09-17T16:05:09+09:00</updated>
     <author>
       <name>ikageso</name>
     </author>
@@ -267,76 +329,6 @@ mkdir /mnt/バックアップ先/ホスト名_backup/apache&lt;/code&gt;&lt;/li&
 cp /mnt/バックアップ元/etc/apache2/site-available/*&lt;/code&gt; &lt;code&gt;/mnt/バックアップ先/ホスト名_backup/apache/&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</content>
-  </entry>
-  <entry>
-    <title>ラーメン店"にぼ次郎"におけるヒューリスティック評価</title>
-    <link rel="alternate" href="http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/26/ramen_nbzr.html"/>
-    <id>http://ecl.info.kindai.ac.jp/~ikageso/blog/2015/11/26/ramen_nbzr.html</id>
-    <published>2015-11-26T12:50:00Z</published>
-    <updated>2015-11-27T18:18:15+09:00</updated>
-    <author>
-      <name>ikageso</name>
-    </author>
-    <content type="html">&lt;h2 id="背景"&gt;背景&lt;/h2&gt;
-
-&lt;p&gt;近畿大学の近くには多くの飲食店が存在します。
-結構な頻度で入れ替わり、いつもぼーっとしている僕なんかは
-行こうと思っていても気づいたら閉店や移転しているといった目に度々会います。&lt;/p&gt;
-
-&lt;p&gt;特にラーメン店の数は多く、にぼ次郎もそのラーメン店の一つとして11月9日よりオープンしたお店です。
-このにぼ次郎、ラーメン麦笑とのコラボということで1カ月間限定であり、開店当初は毎日、好奇心旺盛な近大生の行列ができていました。
-僕は基本的に新規開店したラーメン屋さんは一度は味を見てみたいと考えているので、
-並ぶ人の行列がなくなるタイミングを見計らって行ってみようと思ってました。&lt;/p&gt;
-
-&lt;p&gt;しかし、光陰矢の如しと言うように時が経つのは早く、気がついたら11月もそろそろ終わり。
-研究室に宿泊するために、どこかで夕食を取ろうとしたときに、にぼ次郎の前を通り過ぎました。&lt;/p&gt;
-
-&lt;p&gt;「あ、にぼ次郎行ってない」&lt;/p&gt;
-
-&lt;p&gt;そうです、にぼ次郎に行こうと思っていたけど、今日の今日まですっかり頭の中から抜け落ちていたのでした。
-おそらく、この機会を逃すと忘れっぽい僕のことですから、かなりの確率で今後も行くことは無くなってしまうと思います。&lt;/p&gt;
-
-&lt;p&gt;「行くなら、今しかない！」&lt;/p&gt;
-
-&lt;p&gt;僕は期待を胸ににぼ次郎へと入っていくのでした。&lt;/p&gt;
-
-&lt;h2 id="実験内容"&gt;実験内容&lt;/h2&gt;
-
-&lt;p&gt;実験はにぼ次郎近大前店にて行いました。
-座席は手前から3番目の座席でした。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;場所:にぼ次郎近大前店,手前から3番目&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;僕はいつもは夕食は18時に食べるのですが、
-この日は20時まで食べ損ねていたので、お腹の空き具合は80%くらいでした。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;お腹の空き具合:80%&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;注文は食券制となっており、コミュ障の僕でも安心して買えます。
-その時のお腹の空き具合と食べれる量を考えた結果、
-注文したのはスタンダードな煮干しラーメンのにぼ次朗(200g)。
-トッピング増し増しまで無料なのですが、
-僕は過去、ラーメン&amp;quot;マッチョ&amp;quot;で痛い目をみた経験があったので、日和って全増しに抑えておきました。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="結果"&gt;結果&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;時間:25分くらい&lt;/li&gt;
-&lt;li&gt;にぼし&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id="考察"&gt;考察&lt;/h2&gt;
-
-&lt;h2 id="まとめ"&gt;まとめ&lt;/h2&gt;
 </content>
   </entry>
   <entry>

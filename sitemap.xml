@@ -151,12 +151,6 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/11/26/ramen_nbzr.html</loc>
-    <lastmod>2015-11-27</lastmod>
-    <priority>0.5</priority>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/11/27/make_backup_for_linux.html</loc>
     <lastmod>2015-11-27</lastmod>
     <priority>0.5</priority>
@@ -164,19 +158,31 @@
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/12/11/kenkyu.html</loc>
-    <lastmod>2015-12-12</lastmod>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.5</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/02/04/prezi.html</loc>
-    <lastmod>2016-02-04</lastmod>
+    <lastmod>2016-09-17</lastmod>
+    <priority>0.5</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/08/01/digital_image_processing_1.html</loc>
+    <lastmod>2016-08-01</lastmod>
     <priority>0.5</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog.html</loc>
-    <lastmod>2015-04-16</lastmod>
+    <lastmod>2016-09-17</lastmod>
+    <priority>0.9</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog.html</loc>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.9</priority>
     <changefreq>daily</changefreq>
   </url>
@@ -265,13 +271,13 @@
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/tags/food.html</loc>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/tags/research.html</loc>
     <lastmod>2015-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
-    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/tags/research.html</loc>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/tags/画像処理.html</loc>
     <lastmod>2015-02-16</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
@@ -280,6 +286,18 @@
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016.html</loc>
     <lastmod>2015-02-16</lastmod>
     <priority>0.8</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/08.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2016/08/01.html</loc>
+    <lastmod>2015-02-16</lastmod>
+    <priority>0.6</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
@@ -320,12 +338,6 @@
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/11/27.html</loc>
-    <lastmod>2015-02-16</lastmod>
-    <priority>0.6</priority>
-    <changefreq>daily</changefreq>
-  </url>
-  <url>
-    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/2015/11/26.html</loc>
     <lastmod>2015-02-16</lastmod>
     <priority>0.6</priority>
     <changefreq>daily</changefreq>
@@ -512,31 +524,49 @@
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/2.html</loc>
-    <lastmod>2015-04-16</lastmod>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/3.html</loc>
-    <lastmod>2015-04-16</lastmod>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/4.html</loc>
-    <lastmod>2015-04-16</lastmod>
+    <lastmod>2016-09-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/2.html</loc>
+    <lastmod>2016-09-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/3.html</loc>
+    <lastmod>2016-09-17</lastmod>
+    <priority>0.7</priority>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/4.html</loc>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/5.html</loc>
-    <lastmod>2015-04-16</lastmod>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
   <url>
     <loc>http://ecl.info.kindai.ac.jp/~ikageso/~ikageso/blog/page/6.html</loc>
-    <lastmod>2015-04-16</lastmod>
+    <lastmod>2016-09-17</lastmod>
     <priority>0.7</priority>
     <changefreq>daily</changefreq>
   </url>
